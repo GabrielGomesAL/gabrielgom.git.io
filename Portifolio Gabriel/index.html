@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Gabriel Gomes Almeida, desenvolvedor com experiência em análise de dados, programação e automação de processos.">
+    <title>Gabriel Gomes Almeida | Portfólio</title>
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Efeito de partículas -->
+    <div id="particles-js"></div>
+
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo neon-text" aria-label="Ir para a página inicial">Gabriel Gomes</a>
+
+        <nav class="nav">
+            <a href="#home" aria-label="Ir para a seção Home">Home</a>
+            <a href="#about" aria-label="Ir para a seção Sobre">Sobre</a>
+            <a href="#services" aria-label="Ir para a seção Serviços">Serviços</a>
+            <a href="#contact" aria-label="Ir para a seção Contato">Contato</a>
+        </nav>
+
+        <div class="menu-hamburguer" aria-label="Abrir menu de navegação">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+
+    <!-- Seção Home -->
+    <section id="home" class="home">
+        <div class="home-content">
+            <h3>Olá, eu sou</h3>
+            <h1 class="neon-text">Gabriel Gomes Almeida</h1>
+            <h3><span class="typed-text"></span></h3>
+            <p>
+                Desde cedo, sempre preferi buscar soluções em vez de reclamar dos problemas. Minha curiosidade por tecnologia, que surgiu ainda na infância, me levou ao mundo da programação. Essa paixão pela área me motiva a ir sempre além, buscando desafios que ampliem meus conhecimentos e habilidades.
+            </p>
+            <div class="social-media">
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/gabriel-gomes-almeida-b85215340/" target="_blank" rel="noopener noreferrer" aria-label="Visitar meu LinkedIn">
+                        <i class='bx bxl-linkedin'></i>
+                    </a>
+                    <a href="https://github.com/GabrielGomesAL" target="_blank" rel="noopener noreferrer" aria-label="Visitar meu GitHub">
+                        <i class='bx bxl-github'></i>
+                    </a>
+                </div>
+                <a href="Curriculo Gabriel Gomes Almeida.pdf" download class="btn" aria-label="Baixar meu currículo">Download CV</a>
+            </div>
+        </div>
+        <div class="home-img">
+            <img src="img/imagem_2025-02-11_143037950-removebg-preview.png" alt="Foto de perfil de Gabriel Gomes Almeida">
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="about" class="about">
+        <div class="about-img">
+            <img src="img/imagem_2025-02-11_143037950-removebg-preview.png" alt="Sobre mim - Gabriel Gomes Almeida">
+        </div>
+        <div class="about-content">
+            <h3>Sobre Mim</h3>
+            <h1 class="neon-text"><span>Desenvolvedor</span></h1>
+            <p>
+                Atualmente estou no 3º semestre de Análise e Desenvolvimento de Sistemas no Centro Universitário IESB - Campus Brasília (Asa Sul). Tenho conhecimento em criação de soluções automatizadas para otimizar processos internos utilizando Power BI, PostgreSQL e Jupyter Notebook. 
+                Desenvolvimento com Python, HTML, CSS, JavaScript, SQL, NoSQL. Tenho experiência com os sistemas operacionais Linux e Windows, além de atuar como analista de dados, analista de sistemas, desenvolvedor de software e suporte ao usuário.
+            </p>
+            <a href="#" class="btn">Saiba Mais</a>
+        </div>
+    </section>
+
+    <!-- Seção Serviços -->
+    <section id="services" class="services">
+        <h2 class="neon-text">Meus <span>Serviços</span></h2>
+        <div class="service-container">
+            <div class="service-box">
+                <i class='bx bx-code-alt'></i>
+                <h3>Analista de Dados</h3>
+                <p>
+                    Minha principal função é coletar, organizar e analisar grandes volumes de dados para gerar insights relevantes para o negócio. Trabalho com SQL para manipulação de banco de dados, crio dashboards e relatórios em ferramentas como Power BI, e utilizo Python para automação de processos e análise estatística.
+                </p>
+                <a href="#" class="btn">Ler Mais</a>
+            </div>
+            <div class="service-box">
+                <i class='bx bx-code-curly'></i>
+                <h3>Suporte ao Usuário</h3>
+                <p>
+                    Minha principal responsabilidade é atender e resolver demandas técnicas, garantindo que os usuários tenham uma experiência tranquila com os sistemas e ferramentas da empresa. Faço o diagnóstico de problemas, ofereço soluções rápidas e eficientes, e, quando necessário, escalo as questões para outros times.
+                </p>
+                <a href="#" class="btn">Ler Mais</a>
+            </div>
+            <div class="service-box">
+                <i class='bx bx-mobile-alt'></i>
+                <h3>Analista de Sistemas</h3>
+                <p>
+                    Meu foco é levantar requisitos junto aos usuários e stakeholders, entender as necessidades do negócio e transformar isso em soluções tecnológicas eficientes. Faço a modelagem de sistemas, desenho fluxos de processos e ajudo na definição da arquitetura das aplicações.
+                </p>
+                <a href="#" class="btn">Ler Mais</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contact" class="contact">
+        <h2 class="neon-text">Entre em <span>Contato</span></h2>
+        <form action="http://localhost:5000/enviar" method="POST">
+            <div class="input-box">
+                <input type="text" name="name" placeholder="Nome Completo" required aria-label="Digite seu nome completo">
+                <input type="email" name="email" placeholder="E-mail" required aria-label="Digite seu e-mail">
+            </div>
+            <div class="input-box">
+                <input type="number" name="phone" placeholder="Telefone" required aria-label="Digite seu número de telefone">
+                <input type="text" name="subject" placeholder="Assunto" required aria-label="Digite o assunto">
+            </div>
+            <textarea name="message" cols="30" rows="8" placeholder="Mensagem" required aria-label="Digite sua mensagem"></textarea>
+            <button type="submit" class="btn" aria-label="Enviar mensagem">Enviar Mensagem</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright &copy; 2024 por Gabriel Gomes Almeida. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
