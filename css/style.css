@@ -1,0 +1,631 @@
+/* Importação da fonte Poppins com pesos mais modernos */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+
+:root {
+    --main-color: #6C63FF; /* Roxo suave - mantido como cor primária */
+    --text-color: #FFFFFF; /* Branco */
+    --bg-color-01: #121212; /* Fundo mais escuro e moderno */
+    --bg-color-02: #1E1E1E; /* Fundo médio */
+    --accent-color: #FF6584; /* Rosa suave */
+    --gray-color: #B0B0B0; /* Cinza mais claro para melhor legibilidade */
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Transição mais suave e natural */
+    --border-radius: 12px; /* Bordas arredondadas consistentes */
+    --spacing-unit: 8px; /* Sistema de espaçamento baseado em 8px */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+/* Fundo mais limpo com efeito de vidro */
+body {
+    background-color: var(--bg-color-01);
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+/* Efeito de partículas mais sutil */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+/* Tipografia moderna */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    background: linear-gradient(90deg, var(--main-color), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--main-color), transparent);
+    border-radius: 3px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--gray-color);
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+p {
+    font-size: 1.1rem;
+    color: var(--gray-color);
+    margin-bottom: calc(var(--spacing-unit) * 2);
+    font-weight: 300;
+    max-width: 65ch;
+}
+
+/* Header moderno com efeito de vidro */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: calc(var(--spacing-unit) * 2) 5%;
+    background-color: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: var(--transition);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+header.scrolled {
+    padding: calc(var(--spacing-unit) * 1.5) 5%;
+    background-color: rgba(18, 18, 18, 0.95);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+.logo span {
+    color: var(--main-color);
+}
+
+.nav {
+    display: flex;
+    gap: calc(var(--spacing-unit) * 3);
+}
+
+.nav a {
+    font-size: 1rem;
+    color: var(--gray-color);
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--main-color);
+    transition: var(--transition);
+}
+
+.nav a:hover {
+    color: var(--text-color);
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-hamburguer .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.menu-hamburguer.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-hamburguer.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-hamburguer.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Seções com espaçamento consistente */
+section {
+    min-height: 100vh;
+    padding: 120px 5% 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Layout moderno para home e about */
+.home, .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: calc(var(--spacing-unit) * 4);
+    align-items: center;
+}
+
+.home-content, .about-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Imagem circular moderna */
+.home-img, .about-img {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    border: 3px solid rgba(108, 99, 255, 0.2);
+    box-shadow: 0 0 0 10px rgba(108, 99, 255, 0.05);
+    transition: var(--transition);
+}
+
+.home-img img, .about-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.home-img:hover, .about-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 30px rgba(108, 99, 255, 0.2);
+}
+
+/* Botões e links sociais modernos */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 3);
+    background-color: transparent;
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    transition: var(--transition);
+    border: 2px solid var(--main-color);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    max-width: max-content;
+    cursor: pointer;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(135deg, var(--main-color), var(--accent-color));
+    transition: var(--transition);
+    z-index: -1;
+}
+
+.btn:hover {
+    color: var(--text-color);
+    transform: translateY(-3px);
+}
+
+.btn:hover::before {
+    width: 100%;
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--spacing-unit) * 3);
+    margin-top: calc(var(--spacing-unit) * 3);
+}
+
+.social-icons {
+    display: flex;
+    gap: calc(var(--spacing-unit) * 2);
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--bg-color-02);
+    color: var(--text-color);
+    font-size: 1.2rem;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-icons a:hover {
+    background-color: var(--main-color);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
+}
+
+/* Serviços em cards modernos */
+.services h2, .skills h2 {
+    text-align: center;
+    margin-bottom: calc(var(--spacing-unit) * 6);
+}
+
+.service-container, .skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: calc(var(--spacing-unit) * 3);
+}
+
+.service-box {
+    background-color: var(--bg-color-02);
+    padding: calc(var(--spacing-unit) * 3);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+    border-color: rgba(108, 99, 255, 0.3);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-box i {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+.service-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+.service-box p {
+    margin-bottom: calc(var(--spacing-unit) * 3);
+    flex-grow: 1;
+}
+
+/* Seção de Competências Técnicas */
+.skills {
+    padding: 120px 5% 80px;
+}
+
+.skills-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: calc(var(--spacing-unit) * 2);
+    margin-bottom: calc(var(--spacing-unit) * 4);
+}
+
+.skill-category-btn {
+    padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 2);
+    background-color: var(--bg-color-02);
+    color: var(--gray-color);
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-category-btn.active, .skill-category-btn:hover {
+    background-color: var(--main-color);
+    color: var(--text-color);
+    border-color: var(--main-color);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: calc(var(--spacing-unit) * 3);
+}
+
+.skill-item {
+    background-color: var(--bg-color-02);
+    padding: calc(var(--spacing-unit) * 2);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--main-color), var(--accent-color));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+
+.skill-item:hover::before {
+    transform: scaleX(1);
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+.skill-icon {
+    font-size: 2rem;
+    color: var(--main-color);
+    margin-right: calc(var(--spacing-unit) * 2);
+}
+
+.skill-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.skill-level {
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: calc(var(--spacing-unit) * 1);
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--main-color), var(--accent-color));
+    border-radius: 3px;
+    transition: width 1s ease-in-out;
+}
+
+.skill-percentage {
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--gray-color);
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--spacing-unit) * 0.5);
+    margin-top: calc(var(--spacing-unit) * 1);
+}
+
+.skill-tag {
+    padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 1);
+    background-color: rgba(108, 99, 255, 0.1);
+    color: var(--main-color);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Formulário de contato moderno */
+.contact h2 {
+    text-align: center;
+    margin-bottom: calc(var(--spacing-unit) * 6);
+}
+
+form {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing-unit) * 2);
+}
+
+.input-box {
+    display: flex;
+    gap: calc(var(--spacing-unit) * 2);
+}
+
+.input-box.full-width {
+    flex-direction: column;
+    gap: calc(var(--spacing-unit) * 2);
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: calc(var(--spacing-unit) * 2);
+    background-color: var(--bg-color-02);
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+    font-size: 1rem;
+}
+
+form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+form input:focus, form textarea:focus {
+    border-color: var(--main-color);
+    box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.3);
+}
+
+form button {
+    margin-top: calc(var(--spacing-unit) * 2);
+    align-self: flex-start;
+}
+
+/* Footer minimalista */
+footer {
+    text-align: center;
+    padding: calc(var(--spacing-unit) * 4) 0;
+    background-color: var(--bg-color-02);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer p {
+    color: var(--gray-color);
+    font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .home, .about {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .home-img, .about-img {
+        order: -1;
+        max-width: 300px;
+        margin-bottom: calc(var(--spacing-unit) * 4);
+    }
+    
+    .btn, .social-icons {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-hamburguer {
+        display: flex;
+    }
+    
+    .nav {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-color: var(--bg-color-01);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: var(--transition);
+        gap: calc(var(--spacing-unit) * 4);
+    }
+    
+    .nav.active {
+        left: 0;
+    }
+    
+    .service-container, .skills-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .input-box {
+        flex-direction: column;
+        gap: calc(var(--spacing-unit) * 2);
+    }
+
+    .social-media {
+        flex-direction: column;
+        gap: calc(var(--spacing-unit) * 2);
+    }
+
+    .skills-categories {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: calc(var(--spacing-unit) * 1);
+    }
+}
+
+/* Animações sutis */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+section {
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+section:nth-child(2) { animation-delay: 0.1s; }
+section:nth-child(3) { animation-delay: 0.2s; }
+section:nth-child(4) { animation-delay: 0.3s; }
+
+.light-effect {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(108, 99, 255, 0.3) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+}

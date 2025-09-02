@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Gabriel Gomes Almeida, desenvolvedor com experiência em análise de dados, programação e automação de processos.">
+    <title>Gabriel Gomes Almeida | Portfólio</title>
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Importação da fonte Poppins com pesos mais modernos */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+
+        :root {
+            --main-color: #6C63FF; /* Roxo suave - mantido como cor primária */
+            --text-color: #FFFFFF; /* Branco */
+            --bg-color-01: #121212; /* Fundo mais escuro e moderno */
+            --bg-color-02: #1E1E1E; /* Fundo médio */
+            --accent-color: #FF6584; /* Rosa suave */
+            --gray-color: #B0B0B0; /* Cinza mais claro para melhor legibilidade */
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Transição mais suave e natural */
+            --border-radius: 12px; /* Bordas arredondadas consistentes */
+            --spacing-unit: 8px; /* Sistema de espaçamento baseado em 8px */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            scroll-behavior: smooth;
+        }
+
+        /* Fundo mais limpo com efeito de vidro */
+        body {
+            background-color: var(--bg-color-01);
+            color: var(--text-color);
+            line-height: 1.6;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+
+        /* Tipografia moderna */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            background: linear-gradient(90deg, var(--main-color), var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--main-color), transparent);
+            border-radius: 3px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--gray-color);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: var(--gray-color);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            font-weight: 300;
+            max-width: 65ch;
+        }
+
+        /* Header moderno com efeito de vidro */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: calc(var(--spacing-unit) * 2) 5%;
+            background-color: rgba(18, 18, 18, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        header.scrolled {
+            padding: calc(var(--spacing-unit) * 1.5) 5%;
+            background-color: rgba(18, 18, 18, 0.95);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        .logo span {
+            color: var(--main-color);
+        }
+
+        .nav {
+            display: flex;
+            gap: calc(var(--spacing-unit) * 3);
+        }
+
+        .nav a {
+            font-size: 1rem;
+            color: var(--gray-color);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--main-color);
+            transition: var(--transition);
+        }
+
+        .nav a:hover {
+            color: var(--text-color);
+        }
+
+        .nav a:hover::after {
+            width: 100%;
+        }
+
+        .menu-hamburguer {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .menu-hamburguer .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-color);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .menu-hamburguer.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menu-hamburguer.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-hamburguer.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Seções com espaçamento consistente */
+        section {
+            min-height: 100vh;
+            padding: 120px 5% 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Layout moderno para home e about */
+        .home, .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: calc(var(--spacing-unit) * 4);
+            align-items: center;
+        }
+
+        .home-content, .about-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Imagem circular moderna */
+        .home-img, .about-img {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+            border: 3px solid rgba(108, 99, 255, 0.2);
+            box-shadow: 0 0 0 10px rgba(108, 99, 255, 0.05);
+            transition: var(--transition);
+        }
+
+        .home-img img, .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .home-img:hover, .about-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 30px rgba(108, 99, 255, 0.2);
+        }
+
+        /* Botões e links sociais modernos */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 3);
+            background-color: transparent;
+            color: var(--text-color);
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--main-color);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            max-width: max-content;
+            cursor: pointer;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, var(--main-color), var(--accent-color));
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .btn:hover {
+            color: var(--text-color);
+            transform: translateY(-3px);
+        }
+
+        .btn:hover::before {
+            width: 100%;
+        }
+
+        .social-media {
+            display: flex;
+            align-items: center;
+            gap: calc(var(--spacing-unit) * 3);
+            margin-top: calc(var(--spacing-unit) * 3);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: calc(var(--spacing-unit) * 2);
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: var(--bg-color-02);
+            color: var(--text-color);
+            font-size: 1.2rem;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--main-color);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
+        }
+
+        /* Seção de Competências Técnicas */
+        .skills {
+            padding: 120px 5% 80px;
+        }
+
+        .skills h2 {
+            text-align: center;
+            margin-bottom: calc(var(--spacing-unit) * 6);
+        }
+
+        .skills-categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: calc(var(--spacing-unit) * 2);
+            margin-bottom: calc(var(--spacing-unit) * 4);
+        }
+
+        .skill-category-btn {
+            padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 2);
+            background-color: var(--bg-color-02);
+            color: var(--gray-color);
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .skill-category-btn.active, .skill-category-btn:hover {
+            background-color: var(--main-color);
+            color: var(--text-color);
+            border-color: var(--main-color);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: calc(var(--spacing-unit) * 3);
+        }
+
+        .skill-item {
+            background-color: var(--bg-color-02);
+            padding: calc(var(--spacing-unit) * 2);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--main-color), var(--accent-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .skill-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .skill-icon {
+            font-size: 2rem;
+            color: var(--main-color);
+            margin-right: calc(var(--spacing-unit) * 2);
+        }
+
+        .skill-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .skill-level {
+            height: 6px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: calc(var(--spacing-unit) * 1);
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--main-color), var(--accent-color));
+            border-radius: 3px;
+            transition: width 1s ease-in-out;
+        }
+
+        .skill-percentage {
+            text-align: right;
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: calc(var(--spacing-unit) * 0.5);
+            margin-top: calc(var(--spacing-unit) * 1);
+        }
+
+        .skill-tag {
+            padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 1);
+            background-color: rgba(108, 99, 255, 0.1);
+            color: var(--main-color);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Footer minimalista */
+        footer {
+            text-align: center;
+            padding: calc(var(--spacing-unit) * 4) 0;
+            background-color: var(--bg-color-02);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        footer p {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .home, .about {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .home-img, .about-img {
+                order: -1;
+                max-width: 300px;
+                margin-bottom: calc(var(--spacing-unit) * 4);
+            }
+            
+            .btn, .social-icons {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-hamburguer {
+                display: flex;
+            }
+            
+            .nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--bg-color-01);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: var(--transition);
+                gap: calc(var(--spacing-unit) * 4);
+            }
+            
+            .nav.active {
+                left: 0;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-media {
+                flex-direction: column;
+                gap: calc(var(--spacing-unit) * 2);
+            }
+
+            .skills-categories {
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding-bottom: calc(var(--spacing-unit) * 1);
+            }
+        }
+
+        /* Animações sutis */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        section {
+            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        section:nth-child(2) { animation-delay: 0.1s; }
+        section:nth-child(3) { animation-delay: 0.2s; }
+
+        .light-effect {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(108, 99, 255, 0.3) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo neon-text" aria-label="Ir para a página inicial">Gabriel Gomes</a>
+
+        <nav class="nav">
+            <a href="#home" aria-label="Ir para a seção Home">Home</a>
+            <a href="#about" aria-label="Ir para a seção Sobre">Sobre</a>
+            <a href="#skills" aria-label="Ir para a seção Competências">Competências</a>
+        </nav>
+
+        <div class="menu-hamburguer" aria-label="Abrir menu de navegação">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+
+    <!-- Seção Home -->
+    <section id="home" class="home">
+        <div class="home-content">
+            <h3>Olá, eu sou</h3>
+            <h1 class="neon-text">Gabriel Gomes Almeida</h1>
+            <h3><span class="typed-text"></span></h3>
+            <p>
+                Desde cedo, sempre preferi buscar soluções em vez de reclamar dos problemas. Minha curiosidade por tecnologia, que surgiu ainda na infância, me levou ao mundo da programação. Essa paixão pela área me motiva a ir sempre além, buscando desafios que ampliem meus conhecimentos e habilidades.
+            </p>
+            <div class="social-media">
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/gabriel-gomes-almeida-b85215340/" target="_blank" rel="noopener noreferrer" aria-label="Visitar meu LinkedIn">
+                        <i class='bx bxl-linkedin'></i>
+                    </a>
+                    <a href="https://github.com/GabrielGomesAL" target="_blank" rel="noopener noreferrer" aria-label="Visitar meu GitHub">
+                        <i class='bx bxl-github'></i>
+                    </a>
+                </div>
+                <a href="Curriculo Gabriel Gomes Almeida.pdf" download class="btn" aria-label="Baixar meu currículo">Download CV</a>
+            </div>
+        </div>
+        <div class="home-img">
+            <img src="img/e9e82bb5-d4d4-4390-a2b0-af682a49db63-removebg-preview.png" alt="Foto de perfil de Gabriel Gomes Almeida">
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="about" class="about">
+        <div class="about-img">
+            <img src="img/e9e82bb5-d4d4-4390-a2b0-af682a49db63-removebg-preview.png" alt="Sobre mim - Gabriel Gomes Almeida">
+        </div>
+        <div class="about-content">
+            <h3>Sobre Mim</h3>
+            <h1 class="neon-text"><span>Desenvolvedor</span></h1>
+            <p>
+                Atualmente estou no 4º semestre de Análise e Desenvolvimento de Sistemas no Centro Universitário IESB - Campus Brasília (Asa Sul). Tenho conhecimento em criação de soluções automatizadas para otimizar processos internos utilizando Power BI, PostgreSQL e Jupyter Notebook. 
+                Desenvolvimento com Python, HTML, CSS, JavaScript, SQL, NoSQL. Tenho experiência com os sistemas operacionais Linux e Windows, além de atuar como analista de dados, analista de sistemas, desenvolvedor de software e suporte ao usuário.
+            </p>
+            <a href="#skills" class="btn">Ver Competências</a>
+        </div>
+    </section>
+
+    <!-- Seção Competências Técnicas -->
+    <section id="skills" class="skills">
+        <h2 class="neon-text">Minhas <span>Competências</span></h2>
+        
+        <div class="skills-categories">
+            <button class="skill-category-btn active" data-category="all">Todas</button>
+            <button class="skill-category-btn" data-category="development">Desenvolvimento</button>
+            <button class="skill-category-btn" data-category="ai-data">IA & Dados</button>
+            <button class="skill-category-btn" data-category="database">Banco de Dados</button>
+            <button class="skill-category-btn" data-category="soft-skills">Habilidades</button>
+        </div>
+        
+        <div class="skills-grid">
+            <!-- Desenvolvimento -->
+            <div class="skill-item" data-category="development">
+                <div class="skill-header">
+                    <i class='bx bxl-python skill-icon'></i>
+                    <span class="skill-name">Python</span>
+                </div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 85%"></div>
+                </div>
+                <div class="skill-percentage">85%</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Automação</span>
+                    <span class="skill-tag">Web Scraping</span>
+                    <span class="skill-tag">Scripting</span>
+                </div>
+            </div>
+            
+            <div class="skill-item" data-category="development">
+                <div class="skill-header">
+                    <i class='bx bxl-java skill-icon'></i>
+                    <span class="skill-name">Java</span>
+                </div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 75%"></div>
+                </div>
+                <div class="skill-percentage">75%</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">POO</span>
+                    <span class="skill-tag">Aplicações Desktop</span>
+                </div>
+            </div>
+            
+            <div class="skill-item" data-category="development">
+                <div class="skill-header">
+                    <i class='bx bxl-javascript skill-icon'></i>
+                    <span class="skill-name">JavaScript</span>
+                </div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 80%"></div>
+                </div>
+                <div class="skill-percentage">80%</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Front-end</span>
+                    <span class="skill-tag">Interatividade</span>
+                </div>
+            </div>
+            
+            <div class="skill-item" data-category="development">
+                <div class="skill-header">
+                    <i class='bx bx-code-alt skill-icon'></i>
+                    <span class="skill-name">HTML & CSS</span>
+                </div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 90%"></div>
+                </div>
+                <div class="skill-percentage">90%</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Web Design</span>
+                    <span class="skill-tag">Responsivo</span>
+                </div>
+            </div>
+            
+            <!-- IA & Dados -->
+            <div class="skill-item" data-category="ai-data">
+                <div class="skill-header">
+                    <i class='bx bx-brain skill-icon'></i>
+                    <span class="skill-name">Machine Learning</span>
+                </div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 80%"></div>
+                </div>
+                <div class="skill-percentage">80%</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">scikit-learn</span>
+                    <span class="skill-tag">Análise Preditiva</span>
+                </div>
+            </div>
+            
+            <div class="skill-item" data-category="ai-data">
+                <div class="skill-header">
+                    <i class='bx bx-line-chart skill-icon'></i>
+                    <span class="skill-name">Análise de Dados</span>
+                </div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 85%"></div>
+                </div>
+                <div class="skill-percentage">85%</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">Visualização</span>
+                </div>
+            </div>
+            
+            <div class="skill-item" data-category="ai-data">
+                <div class="skill-header">
+                    <i class='bx bx-network-chart skill-icon'></i>
+                    <span class="skill-name">Deep Learning</span>
+                </div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 70%"></div>
+                </div>
+                <div class="skill-percentage">70%</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">Keras</span>
+                </div>
+            </div>
+            
+            <div class="skill-item" data-category="ai-data">
+                <div class="skill-header">
+                    <i class='bx bx-data skill-icon'></i>
+                    <span class="skill-name">Power BI</span>
+                </div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 85%"></div>
+                </div>
+                <div class="skill-percentage">85%</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Dashboards</span>
+                    <span class="skill-tag">Relatórios</span>
+                </div>
+            </div>
+            
+            <!-- Banco de Dados -->
+            <div class="skill-item" data-category="database">
+                <div class="skill-header">
+                    <i class='bx bx-data skill-icon'></i>
+                    <span class="skill-name">SQL</span>
+                </div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 90%"></div>
+                </div>
+                <div class="skill-percentage">90%</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">Consultas</span>
+                    <span class="skill-tag">Otimização</span>
+                </div>
+            </div>
+            
+            <div class="skill-item" data-category="database">
+                <div class="skill-header">
+                    <i class='bx bx-server skill-icon'></i>
+                    <span class="skill-name">NoSQL</span>
+                </div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 75%"></div>
+                </div>
+                <div class="skill-percentage">75%</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">Bancos Não-Relacionais</span>
+                </div>
+            </div>
+            
+            <div class="skill-item" data-category="database">
+                <div class="skill-header">
+                    <i class='bx bx-cog skill-icon'></i>
+                    <span class="skill-name">Administração de BD</span>
+                </div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 80%"></div>
+                </div>
+                <div class="skill-percentage">80%</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">SGBD</span>
+                    <span class="skill-tag">Manutenção</span>
+                </div>
+            </div>
+            
+            <!-- Habilidades Complementares -->
+            <div class="skill-item" data-category="soft-skills">
+                <div class="skill-header">
+                    <i class='bx bx-message-dots skill-icon'></i>
+                    <span class="skill-name">Comunicação</span>
+                </div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 90%"></div>
+                </div>
+                <div class="skill-percentage">90%</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Clareza Técnica</span>
+                    <span class="skill-tag">Documentação</span>
+                </div>
+            </div>
+            
+            <div class="skill-item" data-category="soft-skills">
+                <div class="skill-header">
+                    <i class='bx bx-brain skill-icon'></i>
+                    <span class="skill-name">Resolução de Problemas</span>
+                </div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 95%"></div>
+                </div>
+                <div class="skill-percentage">95%</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Análise</span>
+                    <span class="skill-tag">Soluções Eficazes</span>
+                </div>
+            </div>
+            
+            <div class="skill-item" data-category="soft-skills">
+                <div class="skill-header">
+                    <i class='bx bx-group skill-icon'></i>
+                    <span class="skill-name">Trabalho em Equipe</span>
+                </div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 85%"></div>
+                </div>
+                <div class="skill-percentage">85%</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Colaboração</span>
+                    <span class="skill-tag">Agilidade</span>
+                </div>
+            </div>
+            
+            <div class="skill-item" data-category="soft-skills">
+                <div class="skill-header">
+                    <i class='bx bx-time-five skill-icon'></i>
+                    <span class="skill-name">Gestão de Tempo</span>
+                </div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 88%"></div>
+                </div>
+                <div class="skill-percentage">88%</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Priorização</span>
+                    <span class="skill-tag">Produtividade</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright &copy; 2024 por Gabriel Gomes Almeida. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Seletores
+        const menuHamburguer = document.querySelector('.menu-hamburguer');
+        const nav = document.querySelector('.nav');
+        const navLinks = document.querySelectorAll('.nav a');
+        const sections = document.querySelectorAll('section');
+        const header = document.querySelector('header');
+
+        // Função para alternar o menu hamburguer
+        menuHamburguer.addEventListener('click', () => {
+            menuHamburguer.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        // Fechar o menu ao clicar em um link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (nav.classList.contains('active')) {
+                    menuHamburguer.classList.remove('active');
+                    nav.classList.remove('active');
+                }
+            });
+        });
+
+        // Efeito de scroll suave para links internos
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Adicionar classe ativa ao header ao rolar a página
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Animação de revelação ao rolar a página
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2
+        };
+
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Efeito de digitação na home
+        const typedText = document.querySelector('.typed-text');
+        const textArray = ["Desenvolvedor", "Analista de Dados", "Analista de Sistemas"];
+        let textIndex = 0;
+        let charIndex = 0;
+
+        const type = () => {
+            if (charIndex < textArray[textIndex].length) {
+                typedText.textContent += textArray[textIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, 100);
+            } else {
+                setTimeout(erase, 2000);
+            }
+        };
+
+        const erase = () => {
+            if (charIndex > 0) {
+                typedText.textContent = textArray[textIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, 50);
+            } else {
+                textIndex++;
+                if (textIndex >= textArray.length) textIndex = 0;
+                setTimeout(type, 500);
+            }
+        };
+
+        // Iniciar efeito de digitação após o carregamento da página
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typedText) {
+                setTimeout(type, 1000);
+            }
+            
+            // Inicializar filtro de competências
+            initSkillsFilter();
+        });
+
+        // Efeito de luz que segue o mouse
+        document.addEventListener('mousemove', (e) => {
+            const light = document.createElement('div');
+            light.classList.add('light-effect');
+            light.style.left = `${e.clientX}px`;
+            light.style.top = `${e.clientY}px`;
+            document.body.appendChild(light);
+
+            setTimeout(() => {
+                light.remove();
+            }, 100);
+        });
+
+        // Filtro de competências
+        function initSkillsFilter() {
+            const categoryButtons = document.querySelectorAll('.skill-category-btn');
+            const skillItems = document.querySelectorAll('.skill-item');
+            
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remover classe active de todos os botões
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Adicionar classe active ao botão clicado
+                    button.classList.add('active');
+                    
+                    // Filtrar competências
+                    const category = button.getAttribute('data-category');
+                    
+                    skillItems.forEach(item => {
+                        if (category === 'all' || item.getAttribute('data-category') === category) {
+                            item.style.display = 'flex';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Animar barras de progresso quando a seção de competências for visível
+            const skillsSection = document.getElementById('skills');
+            const skillProgresses = document.querySelectorAll('.skill-progress');
+            
+            const skillsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        skillProgresses.forEach(progress => {
+                            const width = progress.style.width;
+                            progress.style.width = '0';
+                            setTimeout(() => {
+                                progress.style.width = width;
+                            }, 200);
+                        });
+                        skillsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            skillsObserver.observe(skillsSection);
+        }
+    </script>
+</body>
+</html>
