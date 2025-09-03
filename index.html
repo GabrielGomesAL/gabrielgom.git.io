@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Gabriel Gomes Almeida, desenvolvedor com experiência em análise de dados, programação e automação de processos.">
-    <title>Gabriel Gomes Almeida | Portfólio</title>
+    <meta name="description" content="Portfólio de Gabriel Gomes Almeida, especialista em Data Science, IA, Infraestrutura de Dados e Análise Preditiva.">
+    <title>Gabriel Gomes Almeida | Especialista em Dados e IA</title>
     <link rel="shortcut icon" href="#" type="image/x-icon">
     <!-- Box Icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -42,6 +42,17 @@
             line-height: 1.6;
             font-size: 16px;
             overflow-x: hidden;
+        }
+
+        /* Efeito de partículas */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.3;
         }
 
         /* Tipografia moderna */
@@ -279,6 +290,8 @@
             align-items: center;
             gap: calc(var(--spacing-unit) * 3);
             margin-top: calc(var(--spacing-unit) * 3);
+            z-index: 2;
+            position: relative;
         }
 
         .social-icons {
@@ -536,6 +549,9 @@
     </style>
 </head>
 <body>
+    <!-- Efeito de partículas -->
+    <div id="particles-js"></div>
+
     <!-- Header -->
     <header>
         <a href="#" class="logo neon-text" aria-label="Ir para a página inicial">Gabriel Gomes</a>
@@ -560,7 +576,7 @@
             <h1 class="neon-text">Gabriel Gomes Almeida</h1>
             <h3><span class="typed-text"></span></h3>
             <p>
-                Desde cedo, sempre preferi buscar soluções em vez de reclamar dos problemas. Minha curiosidade por tecnologia, que surgiu ainda na infância, me levou ao mundo da programação. Essa paixão pela área me motiva a ir sempre além, buscando desafios que ampliem meus conhecimentos e habilidades.
+                Desde cedo, minha mentalidade analítica me levou a buscar soluções baseadas em dados em vez de apenas identificar problemas. Minha fascinação por padrões, estatísticas e inteligência artificial me direcionou ao universo da ciência de dados. Esta paixão me impulsiona a constantemente explorar novas técnicas de análise preditiva, machine learning e arquitetura de dados para transformar informações brutas em insights acionáveis.
             </p>
             <div class="social-media">
                 <div class="social-icons">
@@ -586,12 +602,14 @@
         </div>
         <div class="about-content">
             <h3>Sobre Mim</h3>
-            <h1 class="neon-text"><span>Desenvolvedor</span></h1>
+            <h1 class="neon-text"><span>Especialista em Dados & IA</span></h1>
             <p>
-                Atualmente estou no 4º semestre de Análise e Desenvolvimento de Sistemas no Centro Universitário IESB - Campus Brasília (Asa Sul). Tenho conhecimento em criação de soluções automatizadas para otimizar processos internos utilizando Power BI, PostgreSQL e Jupyter Notebook. 
-                Desenvolvimento com Python, HTML, CSS, JavaScript, SQL, NoSQL. Tenho experiência com os sistemas operacionais Linux e Windows, além de atuar como analista de dados, analista de sistemas, desenvolvedor de software e suporte ao usuário.
+                Atualmente estou no 4º semestre de Análise e Desenvolvimento de Sistemas no Centro Universitário IESB, com foco especializado em Data Science e Inteligência Artificial. Minha expertise inclui a criação de pipelines de dados completos, desde a ingestão e limpeza até a análise preditiva e visualização. 
             </p>
-            <a href="#skills" class="btn">Ver Competências</a>
+            <p>
+                Domino tecnologias como Python para análise de dados com Pandas e NumPy, frameworks de machine learning como Scikit-learn и TensorFlow, e ferramentas de BI como Power BI para criação de dashboards estratégicos. Tenho experiência sólida em bancos de dados relacionais (PostgreSQL) e não-relacionais, além de conhecimento em infraestrutura de dados e deploy de modelos de machine learning em ambientes de produção.
+            </p>
+            <a href="#skills" class="btn">Ver Competências Técnicas</a>
         </div>
     </section>
 
@@ -601,241 +619,206 @@
         
         <div class="skills-categories">
             <button class="skill-category-btn active" data-category="all">Todas</button>
-            <button class="skill-category-btn" data-category="development">Desenvolvimento</button>
-            <button class="skill-category-btn" data-category="ai-data">IA & Dados</button>
-            <button class="skill-category-btn" data-category="database">Banco de Dados</button>
-            <button class="skill-category-btn" data-category="soft-skills">Habilidades</button>
+            <button class="skill-category-btn" data-category="data-science">Data Science</button>
+            <button class="skill-category-btn" data-category="ai-ml">IA & Machine Learning</button>
+            <button class="skill-category-btn" data-category="data-engineering">Engenharia de Dados</button>
+            <button class="skill-category-btn" data-category="data-visualization">Visualização</button>
         </div>
         
         <div class="skills-grid">
-            <!-- Desenvolvimento -->
-            <div class="skill-item" data-category="development">
+            <!-- Data Science -->
+            <div class="skill-item" data-category="data-science">
                 <div class="skill-header">
-                    <i class='bx bxl-python skill-icon'></i>
-                    <span class="skill-name">Python</span>
-                </div>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 85%"></div>
-                </div>
-                <div class="skill-percentage">85%</div>
-                <div class="skill-tags">
-                    <span class="skill-tag">Automação</span>
-                    <span class="skill-tag">Web Scraping</span>
-                    <span class="skill-tag">Scripting</span>
-                </div>
-            </div>
-            
-            <div class="skill-item" data-category="development">
-                <div class="skill-header">
-                    <i class='bx bxl-java skill-icon'></i>
-                    <span class="skill-name">Java</span>
-                </div>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 75%"></div>
-                </div>
-                <div class="skill-percentage">75%</div>
-                <div class="skill-tags">
-                    <span class="skill-tag">POO</span>
-                    <span class="skill-tag">Aplicações Desktop</span>
-                </div>
-            </div>
-            
-            <div class="skill-item" data-category="development">
-                <div class="skill-header">
-                    <i class='bx bxl-javascript skill-icon'></i>
-                    <span class="skill-name">JavaScript</span>
-                </div>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 80%"></div>
-                </div>
-                <div class="skill-percentage">80%</div>
-                <div class="skill-tags">
-                    <span class="skill-tag">Front-end</span>
-                    <span class="skill-tag">Interatividade</span>
-                </div>
-            </div>
-            
-            <div class="skill-item" data-category="development">
-                <div class="skill-header">
-                    <i class='bx bx-code-alt skill-icon'></i>
-                    <span class="skill-name">HTML & CSS</span>
+                    <i class='bx bx-stats skill-icon'></i>
+                    <span class="skill-name">Análise Estatística</span>
                 </div>
                 <div class="skill-level">
                     <div class="skill-progress" style="width: 90%"></div>
                 </div>
                 <div class="skill-percentage">90%</div>
                 <div class="skill-tags">
-                    <span class="skill-tag">Web Design</span>
-                    <span class="skill-tag">Responsivo</span>
+                    <span class="skill-tag">Estatística</span>
+                    <span class="skill-tag">Hipóteses</span>
+                    <span class="skill-tag">Testes A/B</span>
                 </div>
             </div>
             
-            <!-- IA & Dados -->
-            <div class="skill-item" data-category="ai-data">
-                <div class="skill-header">
-                    <i class='bx bx-brain skill-icon'></i>
-                    <span class="skill-name">Machine Learning</span>
-                </div>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 80%"></div>
-                </div>
-                <div class="skill-percentage">80%</div>
-                <div class="skill-tags">
-                    <span class="skill-tag">scikit-learn</span>
-                    <span class="skill-tag">Análise Preditiva</span>
-                </div>
-            </div>
-            
-            <div class="skill-item" data-category="ai-data">
-                <div class="skill-header">
-                    <i class='bx bx-line-chart skill-icon'></i>
-                    <span class="skill-name">Análise de Dados</span>
-                </div>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 85%"></div>
-                </div>
-                <div class="skill-percentage">85%</div>
-                <div class="skill-tags">
-                    <span class="skill-tag">Pandas</span>
-                    <span class="skill-tag">Visualização</span>
-                </div>
-            </div>
-            
-            <div class="skill-item" data-category="ai-data">
-                <div class="skill-header">
-                    <i class='bx bx-network-chart skill-icon'></i>
-                    <span class="skill-name">Deep Learning</span>
-                </div>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 70%"></div>
-                </div>
-                <div class="skill-percentage">70%</div>
-                <div class="skill-tags">
-                    <span class="skill-tag">TensorFlow</span>
-                    <span class="skill-tag">Keras</span>
-                </div>
-            </div>
-            
-            <div class="skill-item" data-category="ai-data">
+            <div class="skill-item" data-category="data-science">
                 <div class="skill-header">
                     <i class='bx bx-data skill-icon'></i>
-                    <span class="skill-name">Power BI</span>
-                </div>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 85%"></div>
-                </div>
-                <div class="skill-percentage">85%</div>
-                <div class="skill-tags">
-                    <span class="skill-tag">Dashboards</span>
-                    <span class="skill-tag">Relatórios</span>
-                </div>
-            </div>
-            
-            <!-- Banco de Dados -->
-            <div class="skill-item" data-category="database">
-                <div class="skill-header">
-                    <i class='bx bx-data skill-icon'></i>
-                    <span class="skill-name">SQL</span>
-                </div>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 90%"></div>
-                </div>
-                <div class="skill-percentage">90%</div>
-                <div class="skill-tags">
-                    <span class="skill-tag">PostgreSQL</span>
-                    <span class="skill-tag">Consultas</span>
-                    <span class="skill-tag">Otimização</span>
-                </div>
-            </div>
-            
-            <div class="skill-item" data-category="database">
-                <div class="skill-header">
-                    <i class='bx bx-server skill-icon'></i>
-                    <span class="skill-name">NoSQL</span>
-                </div>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 75%"></div>
-                </div>
-                <div class="skill-percentage">75%</div>
-                <div class="skill-tags">
-                    <span class="skill-tag">MongoDB</span>
-                    <span class="skill-tag">Bancos Não-Relacionais</span>
-                </div>
-            </div>
-            
-            <div class="skill-item" data-category="database">
-                <div class="skill-header">
-                    <i class='bx bx-cog skill-icon'></i>
-                    <span class="skill-name">Administração de BD</span>
-                </div>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 80%"></div>
-                </div>
-                <div class="skill-percentage">80%</div>
-                <div class="skill-tags">
-                    <span class="skill-tag">SGBD</span>
-                    <span class="skill-tag">Manutenção</span>
-                </div>
-            </div>
-            
-            <!-- Habilidades Complementares -->
-            <div class="skill-item" data-category="soft-skills">
-                <div class="skill-header">
-                    <i class='bx bx-message-dots skill-icon'></i>
-                    <span class="skill-name">Comunicação</span>
-                </div>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 90%"></div>
-                </div>
-                <div class="skill-percentage">90%</div>
-                <div class="skill-tags">
-                    <span class="skill-tag">Clareza Técnica</span>
-                    <span class="skill-tag">Documentação</span>
-                </div>
-            </div>
-            
-            <div class="skill-item" data-category="soft-skills">
-                <div class="skill-header">
-                    <i class='bx bx-brain skill-icon'></i>
-                    <span class="skill-name">Resolução de Problemas</span>
+                    <span class="skill-name">Manipulação de Dados</span>
                 </div>
                 <div class="skill-level">
                     <div class="skill-progress" style="width: 95%"></div>
                 </div>
                 <div class="skill-percentage">95%</div>
                 <div class="skill-tags">
-                    <span class="skill-tag">Análise</span>
-                    <span class="skill-tag">Soluções Eficazes</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">ETL</span>
                 </div>
             </div>
             
-            <div class="skill-item" data-category="soft-skills">
+            <!-- IA & Machine Learning -->
+            <div class="skill-item" data-category="ai-ml">
                 <div class="skill-header">
-                    <i class='bx bx-group skill-icon'></i>
-                    <span class="skill-name">Trabalho em Equipe</span>
-                </div>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 85%"></div>
-                </div>
-                <div class="skill-percentage">85%</div>
-                <div class="skill-tags">
-                    <span class="skill-tag">Colaboração</span>
-                    <span class="skill-tag">Agilidade</span>
-                </div>
-            </div>
-            
-            <div class="skill-item" data-category="soft-skills">
-                <div class="skill-header">
-                    <i class='bx bx-time-five skill-icon'></i>
-                    <span class="skill-name">Gestão de Tempo</span>
+                    <i class='bx bx-brain skill-icon'></i>
+                    <span class="skill-name">Machine Learning</span>
                 </div>
                 <div class="skill-level">
                     <div class="skill-progress" style="width: 88%"></div>
                 </div>
                 <div class="skill-percentage">88%</div>
                 <div class="skill-tags">
-                    <span class="skill-tag">Priorização</span>
-                    <span class="skill-tag">Produtividade</span>
+                    <span class="skill-tag">Scikit-learn</span>
+                    <span class="skill-tag">Classificação</span>
+                    <span class="skill-tag">Regressão</span>
+                </div>
+            </div>
+            
+            <div class="skill-item" data-category="ai-ml">
+                <div class="skill-header">
+                    <i class='bx bx-network-chart skill-icon'></i>
+                    <span class="skill-name">Deep Learning</span>
+                </div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 80%"></div>
+                </div>
+                <div class="skill-percentage">80%</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">Keras</span>
+                    <span class="skill-tag">Redes Neurais</span>
+                </div>
+            </div>
+            
+            <div class="skill-item" data-category="ai-ml">
+                <div class="skill-header">
+                    <i class='bx bx-trending-up skill-icon'></i>
+                    <span class="skill-name">Análise Preditiva</span>
+                </div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 85%"></div>
+                </div>
+                <div class="skill-percentage">85%</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Séries Temporais</span>
+                    <span class="skill-tag">Previsão</span>
+                    <span class="skill-tag">Modelos Preditivos</span>
+                </div>
+            </div>
+            
+            <!-- Engenharia de Dados -->
+            <div class="skill-item" data-category="data-engineering">
+                <div class="skill-header">
+                    <i class='bx bx-data skill-icon'></i>
+                    <span class="skill-name">SQL Avançado</span>
+                </div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 92%"></div>
+                </div>
+                <div class="skill-percentage">92%</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">Consultas Complexas</span>
+                    <span class="skill-tag">Otimização</span>
+                </div>
+            </div>
+            
+            <div class="skill-item" data-category="data-engineering">
+                <div class="skill-header">
+                    <i class='bx bx-server skill-icon'></i>
+                    <span class="skill-name">Bancos NoSQL</span>
+                </div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 78%"></div>
+                </div>
+                <div class="skill-percentage">78%</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">Bancos Não-Relacionais</span>
+                    <span class="skill-tag">Escalabilidade</span>
+                </div>
+            </div>
+            
+            <div class="skill-item" data-category="data-engineering">
+                <div class="skill-header">
+                    <i class='bx bx-cog skill-icon'></i>
+                    <span class="skill-name">Infraestrutura de Dados</span>
+                </div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 82%"></div>
+                </div>
+                <div class="skill-percentage">82%</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Pipelines</span>
+                    <span class="skill-tag">Data Lakes</span>
+                    <span class="skill-tag">Armazenamento</span>
+                </div>
+            </div>
+            
+            <div class="skill-item" data-category="data-engineering">
+                <div class="skill-header">
+                    <i class='bx bx-cloud skill-icon'></i>
+                    <span class="skill-name">Cloud Computing</span>
+                </div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 75%"></div>
+                </div>
+                <div class="skill-percentage">75%</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">Google Cloud</span>
+                    <span class="skill-tag">BigQuery</span>
+                </div>
+            </div>
+            
+            <!-- Visualização de Dados -->
+            <div class="skill-item" data-category="data-visualization">
+                <div class="skill-header">
+                    <i class='bx bx-line-chart skill-icon'></i>
+                    <span class="skill-name">Power BI</span>
+                </div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 90%"></div>
+                </div>
+                <div class="skill-percentage">90%</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Dashboards</span>
+                    <span class="skill-tag">Relatórios</span>
+                    <span class="skill-tag">KPIs</span>
+                </div>
+            </div>
+            
+            <div class="skill-item" data-category="data-visualization">
+                <div class="skill-header">
+                    <i class='bx bx-bar-chart-alt skill-icon'></i>
+                    <span class="skill-name">Visualização com Python</span>
+                </div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 88%"></div>
+                </div>
+                <div class="skill-percentage">88%</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Matplotlib</span>
+                    <span class="skill-tag">Seaborn</span>
+                    <span class="skill-tag">Plotly</span>
+                </div>
+            </div>
+            
+            <div class="skill-item" data-category="data-visualization">
+                <div class="skill-header">
+                    <i class='bx bx-pie-chart-alt skill-icon'></i>
+                    <span class="skill-name">Storytelling com Dados</span>
+                </div>
+                <div class="skill-level">
+                    <div class="skill-progress" style="width: 85%"></div>
+                </div>
+                <div class="skill-percentage">85%</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Narrativa</span>
+                    <span class="skill-tag">Comunicação</span>
+                    <span class="skill-tag">Insights</span>
                 </div>
             </div>
         </div>
@@ -847,7 +830,117 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
+        // Configuração das partículas
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#6C63FF" 
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.7, 
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#6C63FF", 
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 6,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "repulse"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 400,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+        });
+
         // Seletores
         const menuHamburguer = document.querySelector('.menu-hamburguer');
         const nav = document.querySelector('.nav');
@@ -914,7 +1007,7 @@
 
         // Efeito de digitação na home
         const typedText = document.querySelector('.typed-text');
-        const textArray = ["Desenvolvedor", "Analista de Dados", "Analista de Sistemas"];
+        const textArray = ["Cientista de Dados", "Especialista em IA", "Engenheiro de Dados"];
         let textIndex = 0;
         let charIndex = 0;
 
@@ -941,29 +1034,11 @@
         };
 
         // Iniciar efeito de digitação após o carregamento da página
-        document.addEventListener('DOMContentLoaded', () => {
-            if (typedText) {
-                setTimeout(type, 1000);
-            }
-            
-            // Inicializar filtro de competências
-            initSkillsFilter();
-        });
-
-        // Efeito de luz que segue o mouse
-        document.addEventListener('mousemove', (e) => {
-            const light = document.createElement('div');
-            light.classList.add('light-effect');
-            light.style.left = `${e.clientX}px`;
-            light.style.top = `${e.clientY}px`;
-            document.body.appendChild(light);
-
-            setTimeout(() => {
-                light.remove();
-            }, 100);
-        });
-
-        // Filtro de competências
+        if (typedText) {
+            setTimeout(type, 1000);
+        }
+        
+        // Inicializar filtro de competências
         function initSkillsFilter() {
             const categoryButtons = document.querySelectorAll('.skill-category-btn');
             const skillItems = document.querySelectorAll('.skill-item');
@@ -1010,6 +1085,22 @@
             
             skillsObserver.observe(skillsSection);
         }
+
+        // Inicializar filtro de competências
+        initSkillsFilter();
+
+        // Efeito de luz que segue o mouse
+        document.addEventListener('mousemove', (e) => {
+            const light = document.createElement('div');
+            light.classList.add('light-effect');
+            light.style.left = `${e.clientX}px`;
+            light.style.top = `${e.clientY}px`;
+            document.body.appendChild(light);
+
+            setTimeout(() => {
+                light.remove();
+            }, 100);
+        });
     </script>
 </body>
 </html>
