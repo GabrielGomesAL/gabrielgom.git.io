@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Icone laranja estilizado">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff9f2e"/>
+      <stop offset="60%" stop-color="#ff7a0a"/>
+      <stop offset="100%" stop-color="#ef6400"/>
+    </linearGradient>
+    <linearGradient id="shineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffd37c"/>
+      <stop offset="100%" stop-color="#ffb347"/>
+    </linearGradient>
+    <linearGradient id="flameGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffe14a"/>
+      <stop offset="55%" stop-color="#ff9e11"/>
+      <stop offset="100%" stop-color="#ff5b00"/>
+    </linearGradient>
+  </defs>
+
+  <g fill="none" stroke="#242933" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M112 242c22-75 88-123 162-123 99 0 179 77 179 171 0 107-91 182-218 182-120 0-217-68-217-168 0-40 17-77 46-104 16-16 30-27 48-38z" fill="url(#bodyGrad)"/>
+    <path d="M112 244c40-38 100-62 170-62 63 0 120 18 165 48-14-63-82-111-161-111-76 0-140 44-174 109z" fill="url(#shineGrad)" stroke="none"/>
+
+    <ellipse cx="168" cy="280" rx="32" ry="36" fill="#2b2f38"/>
+    <ellipse cx="345" cy="280" rx="32" ry="36" fill="#2b2f38"/>
+    <circle cx="154" cy="266" r="8" fill="#ffffff" stroke="none"/>
+    <circle cx="331" cy="266" r="8" fill="#ffffff" stroke="none"/>
+    <path d="M147 298c12 10 28 10 41 0" stroke="#2f77d4"/>
+    <path d="M324 298c12 10 28 10 41 0" stroke="#2f77d4"/>
+
+    <path d="M232 327c8 5 13 13 15 21" />
+    <path d="M281 327c-8 5-13 13-15 21" />
+    <path d="M151 343c29 35 70 25 102 33 34 8 57 8 108-1 18-3 31-13 45-32" />
+    <path d="M156 343l11 41" />
+    <path d="M406 343l-11 41" />
+    <path d="M167 384l22-15" />
+    <path d="M395 384l-22-15" />
+
+    <path d="M217 294c18-23 60-23 78 0-24 8-54 8-78 0z" fill="#ffb246" stroke="none"/>
+
+    <path d="M104 168c-17-37-12-76 13-113 8 30 29 45 51 59-18 22-31 43-37 72" fill="url(#flameGrad)"/>
+    <path d="M156 64c10-23 28-40 55-52 4 27 1 50-9 69-11 20-23 29-43 39-8-18-9-36-3-56z" fill="url(#flameGrad)"/>
+    <path d="M208 85c23-11 46-14 72-8-7 25-21 42-43 55-14 8-26 11-45 13 1-22 5-40 16-60z" fill="url(#flameGrad)"/>
+    <path d="M353 74c13-24 31-41 54-53 5 24 3 48-8 71-12 24-24 37-43 54-11-17-14-36-11-58 1-4 3-9 8-14z" fill="url(#flameGrad)"/>
+    <path d="M429 190c13-24 31-41 54-53 5 24 3 48-8 71-12 24-24 37-43 54-11-17-14-36-11-58 1-4 3-9 8-14z" fill="url(#flameGrad)"/>
+  </g>
+</svg>
