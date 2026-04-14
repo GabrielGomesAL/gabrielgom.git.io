@@ -60,15 +60,12 @@
             <div class="language-switcher" aria-label="Selecionar idioma" data-i18n-aria-label="header.languageAria">
                 <button class="language-option is-active" type="button" data-lang="pt" aria-pressed="true">
                     <span class="language-short">PT</span>
-                    <span class="language-full">Português</span>
                 </button>
                 <button class="language-option" type="button" data-lang="en" aria-pressed="false">
                     <span class="language-short">EN</span>
-                    <span class="language-full">English</span>
                 </button>
                 <button class="language-option" type="button" data-lang="es" aria-pressed="false">
                     <span class="language-short">ES</span>
-                    <span class="language-full">Español</span>
                 </button>
             </div>
         </div>
@@ -389,186 +386,292 @@
         <section id="skills" class="section skills-section">
             <div class="section-shell">
                 <div class="section-heading compact" data-reveal="up">
-                    <p class="eyebrow" data-i18n="skills.eyebrow">Stack em Engenharia de IA</p>
-                    <h2 data-i18n="skills.title">Stack para aplicações de IA, do contexto à entrega.</h2>
+                    <p class="eyebrow" data-i18n="skills.eyebrow">Stack principal</p>
+                    <h2 data-i18n="skills.title">IA, ML, desenvolvimento, dados e infraestrutura em uma leitura clara.</h2>
                 </div>
 
                 <div class="skills-layout">
                     <div class="skills-main">
                         <div class="skills-toolbar" data-reveal="up" aria-label="Filtrar competências" data-i18n-aria-label="skills.toolbarAria">
-                            <button class="skill-filter is-active" data-category="all" type="button" data-i18n="skills.filters.all">Todas</button>
-                            <button class="skill-filter" data-category="llm-apps" type="button" data-i18n="skills.filters.llmApps">LLM Apps</button>
-                            <button class="skill-filter" data-category="rag-evals" type="button" data-i18n="skills.filters.ragEvals">RAG & Evals</button>
-                            <button class="skill-filter" data-category="backend" type="button" data-i18n="skills.filters.backend">Back-end</button>
-                            <button class="skill-filter" data-category="product" type="button" data-i18n="skills.filters.product">Produto</button>
+                            <button class="skill-filter is-active" data-category="all" type="button" aria-pressed="true" data-i18n="skills.filters.all">Todas</button>
+                            <button class="skill-filter" data-category="ai" type="button" aria-pressed="false" data-i18n="skills.filters.ai">IA</button>
+                            <button class="skill-filter" data-category="ml" type="button" aria-pressed="false" data-i18n="skills.filters.ml">ML</button>
+                            <button class="skill-filter" data-category="dev" type="button" aria-pressed="false" data-i18n="skills.filters.dev">Dev</button>
+                            <button class="skill-filter" data-category="data" type="button" aria-pressed="false" data-i18n="skills.filters.data">Dados</button>
+                            <button class="skill-filter" data-category="infra" type="button" aria-pressed="false" data-i18n="skills.filters.infra">Infra</button>
                         </div>
 
                         <div class="skills-grid">
-                            <article class="skill-item" data-category="llm-apps" data-reveal="up">
+                            <article class="skill-item" data-category="ai" data-reveal="up">
                                 <div class="skill-topline">
                                     <span class="skill-code">AI-01</span>
-                                    <i class="bx bx-message-square-detail"></i>
+                                    <i class="bx bx-brain"></i>
                                 </div>
-                                <h3 data-i18n="skills.items.ai01.title">LLM application design</h3>
-                                <p data-i18n="skills.items.ai01.copy">Desenho fluxos com instruções, contexto, resposta estruturada e experiência útil para o usuário final.</p>
-                                <div class="skill-meter" aria-hidden="true">
-                                    <span style="--level: 86%;"></span>
-                                </div>
-                                <div class="skill-meta">
-                                    <strong>86%</strong>
-                                    <span data-i18n="skills.items.ai01.meta">Prompting, UX e respostas estruturadas</span>
-                                </div>
-                                <div class="skill-tags">
-                                    <span data-i18n="skills.items.ai01.tags.1">Prompting</span>
-                                    <span data-i18n="skills.items.ai01.tags.2">UX</span>
-                                    <span data-i18n="skills.items.ai01.tags.3">Structured outputs</span>
-                                </div>
-                            </article>
-
-                            <article class="skill-item" data-category="llm-apps" data-reveal="up">
-                                <div class="skill-topline">
-                                    <span class="skill-code">AI-02</span>
-                                    <i class="bx bx-plug"></i>
-                                </div>
-                                <h3 data-i18n="skills.items.ai02.title">Integração com APIs de modelos</h3>
-                                <p data-i18n="skills.items.ai02.copy">Conexão com modelos, autenticação, tratamento de resposta, limites e fallback para fluxos de IA.</p>
-                                <div class="skill-meter" aria-hidden="true">
-                                    <span style="--level: 88%;"></span>
-                                </div>
-                                <div class="skill-meta">
-                                    <strong>88%</strong>
-                                    <span data-i18n="skills.items.ai02.meta">Python, JavaScript e integração com APIs</span>
-                                </div>
-                                <div class="skill-tags">
-                                    <span data-i18n="skills.items.ai02.tags.1">Python</span>
-                                    <span data-i18n="skills.items.ai02.tags.2">JavaScript</span>
-                                    <span data-i18n="skills.items.ai02.tags.3">APIs</span>
-                                </div>
-                            </article>
-
-                            <article class="skill-item" data-category="llm-apps" data-reveal="up">
-                                <div class="skill-topline">
-                                    <span class="skill-code">AI-03</span>
-                                    <i class="bx bx-network-chart"></i>
-                                </div>
-                                <h3 data-i18n="skills.items.ai03.title">Agentes e orquestração</h3>
-                                <p data-i18n="skills.items.ai03.copy">Organização de workflows, chamadas de ferramentas e etapas múltiplas para tarefas mais complexas.</p>
-                                <div class="skill-meter" aria-hidden="true">
-                                    <span style="--level: 79%;"></span>
-                                </div>
-                                <div class="skill-meta">
-                                    <strong>79%</strong>
-                                    <span data-i18n="skills.items.ai03.meta">Agents, tools e automação de fluxo</span>
-                                </div>
-                                <div class="skill-tags">
-                                    <span data-i18n="skills.items.ai03.tags.1">Agents</span>
-                                    <span data-i18n="skills.items.ai03.tags.2">Tools</span>
-                                    <span data-i18n="skills.items.ai03.tags.3">Automation</span>
-                                </div>
-                            </article>
-
-                            <article class="skill-item" data-category="rag-evals" data-reveal="up">
-                                <div class="skill-topline">
-                                    <span class="skill-code">AI-04</span>
-                                    <i class="bx bx-search-alt"></i>
-                                </div>
-                                <h3 data-i18n="skills.items.ai04.title">RAG e grounding</h3>
-                                <p data-i18n="skills.items.ai04.copy">Busca de contexto para respostas mais atuais, relevantes e menos propensas a alucinação.</p>
-                                <div class="skill-meter" aria-hidden="true">
-                                    <span style="--level: 82%;"></span>
-                                </div>
-                                <div class="skill-meta">
-                                    <strong>82%</strong>
-                                    <span data-i18n="skills.items.ai04.meta">Retrieval, contexto e grounding</span>
-                                </div>
-                                <div class="skill-tags">
-                                    <span data-i18n="skills.items.ai04.tags.1">Retrieval</span>
-                                    <span data-i18n="skills.items.ai04.tags.2">Context</span>
-                                    <span data-i18n="skills.items.ai04.tags.3">Grounding</span>
-                                </div>
-                            </article>
-
-                            <article class="skill-item" data-category="rag-evals" data-reveal="up">
-                                <div class="skill-topline">
-                                    <span class="skill-code">AI-05</span>
-                                    <i class="bx bx-check-shield"></i>
-                                </div>
-                                <h3 data-i18n="skills.items.ai05.title">Evals e qualidade</h3>
-                                <p data-i18n="skills.items.ai05.copy">Definição de critérios, testes específicos, logging e comparação de comportamento antes de colocar em produção.</p>
-                                <div class="skill-meter" aria-hidden="true">
-                                    <span style="--level: 77%;"></span>
-                                </div>
-                                <div class="skill-meta">
-                                    <strong>77%</strong>
-                                    <span data-i18n="skills.items.ai05.meta">Evals, logging e validação contínua</span>
-                                </div>
-                                <div class="skill-tags">
-                                    <span data-i18n="skills.items.ai05.tags.1">Evals</span>
-                                    <span data-i18n="skills.items.ai05.tags.2">Logging</span>
-                                    <span data-i18n="skills.items.ai05.tags.3">QA</span>
-                                </div>
-                            </article>
-
-                            <article class="skill-item" data-category="backend" data-reveal="up">
-                                <div class="skill-topline">
-                                    <span class="skill-code">AI-06</span>
-                                    <i class="bx bx-server"></i>
-                                </div>
-                                <h3 data-i18n="skills.items.ai06.title">Back-end para produtos de IA</h3>
-                                <p data-i18n="skills.items.ai06.copy">Estruturo APIs, integrações e serviços que sustentam funcionalidades de IA no fluxo principal do produto.</p>
-                                <div class="skill-meter" aria-hidden="true">
-                                    <span style="--level: 84%;"></span>
-                                </div>
-                                <div class="skill-meta">
-                                    <strong>84%</strong>
-                                    <span data-i18n="skills.items.ai06.meta">REST, services e integrações</span>
-                                </div>
-                                <div class="skill-tags">
-                                    <span data-i18n="skills.items.ai06.tags.1">REST</span>
-                                    <span data-i18n="skills.items.ai06.tags.2">Services</span>
-                                    <span data-i18n="skills.items.ai06.tags.3">Integration</span>
-                                </div>
-                            </article>
-
-                            <article class="skill-item" data-category="backend" data-reveal="up">
-                                <div class="skill-topline">
-                                    <span class="skill-code">AI-07</span>
-                                    <i class="bx bx-rocket"></i>
-                                </div>
-                                <h3 data-i18n="skills.items.ai07.title">Deploy e iteração</h3>
-                                <p data-i18n="skills.items.ai07.copy">Levo protótipos a ambientes utilizáveis e ajusto latência, confiabilidade e comportamento a partir de feedback.</p>
-                                <div class="skill-meter" aria-hidden="true">
-                                    <span style="--level: 81%;"></span>
-                                </div>
-                                <div class="skill-meta">
-                                    <strong>81%</strong>
-                                    <span data-i18n="skills.items.ai07.meta">Deploy, confiabilidade e melhoria contínua</span>
-                                </div>
-                                <div class="skill-tags">
-                                    <span data-i18n="skills.items.ai07.tags.1">Deploy</span>
-                                    <span data-i18n="skills.items.ai07.tags.2">Latency</span>
-                                    <span data-i18n="skills.items.ai07.tags.3">Reliability</span>
-                                </div>
-                            </article>
-
-                            <article class="skill-item" data-category="product" data-reveal="up">
-                                <div class="skill-topline">
-                                    <span class="skill-code">AI-08</span>
-                                    <i class="bx bx-layout"></i>
-                                </div>
-                                <h3 data-i18n="skills.items.ai08.title">Produto e interface</h3>
-                                <p data-i18n="skills.items.ai08.copy">Transformo capacidades de IA em experiências claras, utilizáveis e bem apresentadas.</p>
+                                <h3 data-i18n="skills.items.ai01.title">Aplicações com IA e agentes</h3>
+                                <p data-i18n="skills.items.ai01.copy">Crio aplicações com LLMs, agentes, tools e fluxos orientados a produto, com foco em utilidade real e boa experiência.</p>
                                 <div class="skill-meter" aria-hidden="true">
                                     <span style="--level: 87%;"></span>
                                 </div>
                                 <div class="skill-meta">
                                     <strong>87%</strong>
-                                    <span data-i18n="skills.items.ai08.meta">Apresentação, interação e visão de produto</span>
+                                    <span data-i18n="skills.items.ai01.meta">LLM apps, agentes, prompting e experiências práticas</span>
                                 </div>
                                 <div class="skill-tags">
-                                    <span data-i18n="skills.items.ai08.tags.1">Frontend</span>
-                                    <span data-i18n="skills.items.ai08.tags.2">Interaction</span>
-                                    <span data-i18n="skills.items.ai08.tags.3">Presentation</span>
+                                    <span data-i18n="skills.items.ai01.tags.1">Agents</span>
+                                    <span data-i18n="skills.items.ai01.tags.2">Prompting</span>
+                                    <span data-i18n="skills.items.ai01.tags.3">GenAI</span>
+                                </div>
+                            </article>
+
+                            <article class="skill-item" data-category="ai" data-reveal="up">
+                                <div class="skill-topline">
+                                    <span class="skill-code">AI-02</span>
+                                    <i class="bx bx-search-alt-2"></i>
+                                </div>
+                                <h3 data-i18n="skills.items.ai02.title">RAG, evals e benchmarks</h3>
+                                <p data-i18n="skills.items.ai02.copy">Estruturo contexto, recuperação inteligente, avaliação de desempenho e análise comparativa para melhorar qualidade e confiança.</p>
+                                <div class="skill-meter" aria-hidden="true">
+                                    <span style="--level: 83%;"></span>
+                                </div>
+                                <div class="skill-meta">
+                                    <strong>83%</strong>
+                                    <span data-i18n="skills.items.ai02.meta">RAG, métricas, regressão e qualidade observável</span>
+                                </div>
+                                <div class="skill-tags">
+                                    <span data-i18n="skills.items.ai02.tags.1">RAG</span>
+                                    <span data-i18n="skills.items.ai02.tags.2">Evals</span>
+                                    <span data-i18n="skills.items.ai02.tags.3">Benchmarks</span>
+                                </div>
+                            </article>
+
+                            <article class="skill-item" data-category="ai" data-reveal="up">
+                                <div class="skill-topline">
+                                    <span class="skill-code">AI-03</span>
+                                    <i class="bx bx-network-chart"></i>
+                                </div>
+                                <h3 data-i18n="skills.items.ai03.title">Ecossistema H2O.ai e orquestração</h3>
+                                <p data-i18n="skills.items.ai03.copy">Tenho vivência com arquitetura de agentes, workflows agentic, h2oGPTe e integração entre IA preditiva e generativa.</p>
+                                <div class="skill-meter" aria-hidden="true">
+                                    <span style="--level: 80%;"></span>
+                                </div>
+                                <div class="skill-meta">
+                                    <strong>80%</strong>
+                                    <span data-i18n="skills.items.ai03.meta">H2O.ai, agentes, integrações e fluxos de trabalho</span>
+                                </div>
+                                <div class="skill-tags">
+                                    <span data-i18n="skills.items.ai03.tags.1">H2O.ai</span>
+                                    <span data-i18n="skills.items.ai03.tags.2">Agentic</span>
+                                    <span data-i18n="skills.items.ai03.tags.3">Workflows</span>
+                                </div>
+                            </article>
+
+                            <article class="skill-item" data-category="ml" data-reveal="up">
+                                <div class="skill-topline">
+                                    <span class="skill-code">ML-01</span>
+                                    <i class="bx bx-line-chart"></i>
+                                </div>
+                                <h3 data-i18n="skills.items.ml01.title">Machine Learning com Python</h3>
+                                <p data-i18n="skills.items.ml01.copy">Base prática em Python para Machine Learning, com Scikit-Learn, treino de modelos e leitura aplicada de problemas preditivos.</p>
+                                <div class="skill-meter" aria-hidden="true">
+                                    <span style="--level: 84%;"></span>
+                                </div>
+                                <div class="skill-meta">
+                                    <strong>84%</strong>
+                                    <span data-i18n="skills.items.ml01.meta">Python, Scikit-Learn e fundamentos de ML</span>
+                                </div>
+                                <div class="skill-tags">
+                                    <span data-i18n="skills.items.ml01.tags.1">Python</span>
+                                    <span data-i18n="skills.items.ml01.tags.2">Scikit-Learn</span>
+                                    <span data-i18n="skills.items.ml01.tags.3">ML</span>
+                                </div>
+                            </article>
+
+                            <article class="skill-item" data-category="ml" data-reveal="up">
+                                <div class="skill-topline">
+                                    <span class="skill-code">ML-02</span>
+                                    <i class="bx bx-target-lock"></i>
+                                </div>
+                                <h3 data-i18n="skills.items.ml02.title">Modelagem preditiva e avaliação</h3>
+                                <p data-i18n="skills.items.ml02.copy">Experiência com modelagem preditiva, avaliação de modelos, métricas, benchmarks e tomada de decisão baseada em desempenho.</p>
+                                <div class="skill-meter" aria-hidden="true">
+                                    <span style="--level: 79%;"></span>
+                                </div>
+                                <div class="skill-meta">
+                                    <strong>79%</strong>
+                                    <span data-i18n="skills.items.ml02.meta">Predição, métricas, avaliação e melhoria</span>
+                                </div>
+                                <div class="skill-tags">
+                                    <span data-i18n="skills.items.ml02.tags.1">Predictive</span>
+                                    <span data-i18n="skills.items.ml02.tags.2">Metrics</span>
+                                    <span data-i18n="skills.items.ml02.tags.3">Evaluation</span>
+                                </div>
+                            </article>
+
+                            <article class="skill-item" data-category="dev" data-reveal="up">
+                                <div class="skill-topline">
+                                    <span class="skill-code">DEV-01</span>
+                                    <i class="bx bx-code-alt"></i>
+                                </div>
+                                <h3 data-i18n="skills.items.dev01.title">Python, JavaScript e Node.js</h3>
+                                <p data-i18n="skills.items.dev01.copy">Linguagens e stack prática para construir APIs, automações, integrações e aplicações modernas com boa base de desenvolvimento.</p>
+                                <div class="skill-meter" aria-hidden="true">
+                                    <span style="--level: 89%;"></span>
+                                </div>
+                                <div class="skill-meta">
+                                    <strong>89%</strong>
+                                    <span data-i18n="skills.items.dev01.meta">Python, JavaScript, Node.js e execução prática</span>
+                                </div>
+                                <div class="skill-tags">
+                                    <span data-i18n="skills.items.dev01.tags.1">Python</span>
+                                    <span data-i18n="skills.items.dev01.tags.2">JavaScript</span>
+                                    <span data-i18n="skills.items.dev01.tags.3">Node.js</span>
+                                </div>
+                            </article>
+
+                            <article class="skill-item" data-category="dev" data-reveal="up">
+                                <div class="skill-topline">
+                                    <span class="skill-code">DEV-02</span>
+                                    <i class="bx bx-layer"></i>
+                                </div>
+                                <h3 data-i18n="skills.items.dev02.title">Análise de sistemas e full stack</h3>
+                                <p data-i18n="skills.items.dev02.copy">Atuação com análise de sistemas, desenvolvimento full stack, software e organização técnica de soluções ponta a ponta.</p>
+                                <div class="skill-meter" aria-hidden="true">
+                                    <span style="--level: 85%;"></span>
+                                </div>
+                                <div class="skill-meta">
+                                    <strong>85%</strong>
+                                    <span data-i18n="skills.items.dev02.meta">Sistemas, software e visão end-to-end</span>
+                                </div>
+                                <div class="skill-tags">
+                                    <span data-i18n="skills.items.dev02.tags.1">Full Stack</span>
+                                    <span data-i18n="skills.items.dev02.tags.2">Systems</span>
+                                    <span data-i18n="skills.items.dev02.tags.3">APIs</span>
+                                </div>
+                            </article>
+
+                            <article class="skill-item" data-category="data" data-reveal="up">
+                                <div class="skill-topline">
+                                    <span class="skill-code">DATA-01</span>
+                                    <i class="bx bx-data"></i>
+                                </div>
+                                <h3 data-i18n="skills.items.data01.title">SQL, NoSQL e análise de dados</h3>
+                                <p data-i18n="skills.items.data01.copy">Conhecimento em bancos relacionais e não relacionais, análise de dados e leitura estruturada de informação para apoiar produto e operação.</p>
+                                <div class="skill-meter" aria-hidden="true">
+                                    <span style="--level: 82%;"></span>
+                                </div>
+                                <div class="skill-meta">
+                                    <strong>82%</strong>
+                                    <span data-i18n="skills.items.data01.meta">SQL, NoSQL, análise e estruturação</span>
+                                </div>
+                                <div class="skill-tags">
+                                    <span data-i18n="skills.items.data01.tags.1">SQL</span>
+                                    <span data-i18n="skills.items.data01.tags.2">NoSQL</span>
+                                    <span data-i18n="skills.items.data01.tags.3">Analytics</span>
+                                </div>
+                            </article>
+
+                            <article class="skill-item" data-category="ml" data-reveal="up">
+                                <div class="skill-topline">
+                                    <span class="skill-code">ML-03</span>
+                                    <i class="bx bx-bulb"></i>
+                                </div>
+                                <h3 data-i18n="skills.items.ml03.title">Recomendação e aplicações práticas</h3>
+                                <p data-i18n="skills.items.ml03.copy">Consigo conectar fundamentos de ML a casos práticos, como sistemas de recomendação e aplicações voltadas a negócio.</p>
+                                <div class="skill-meter" aria-hidden="true">
+                                    <span style="--level: 76%;"></span>
+                                </div>
+                                <div class="skill-meta">
+                                    <strong>76%</strong>
+                                    <span data-i18n="skills.items.ml03.meta">Sistemas de recomendação e uso aplicado</span>
+                                </div>
+                                <div class="skill-tags">
+                                    <span data-i18n="skills.items.ml03.tags.1">Recommendation</span>
+                                    <span data-i18n="skills.items.ml03.tags.2">Applied ML</span>
+                                    <span data-i18n="skills.items.ml03.tags.3">Business</span>
+                                </div>
+                            </article>
+
+                            <article class="skill-item" data-category="dev" data-reveal="up">
+                                <div class="skill-topline">
+                                    <span class="skill-code">DEV-03</span>
+                                    <i class="bx bx-window-alt"></i>
+                                </div>
+                                <h3 data-i18n="skills.items.dev03.title">HTML, CSS e interface web</h3>
+                                <p data-i18n="skills.items.dev03.copy">Construção de interfaces web com atenção a apresentação, navegação, organização visual e experiência final.</p>
+                                <div class="skill-meter" aria-hidden="true">
+                                    <span style="--level: 83%;"></span>
+                                </div>
+                                <div class="skill-meta">
+                                    <strong>83%</strong>
+                                    <span data-i18n="skills.items.dev03.meta">Frontend, estrutura visual e entrega web</span>
+                                </div>
+                                <div class="skill-tags">
+                                    <span data-i18n="skills.items.dev03.tags.1">HTML</span>
+                                    <span data-i18n="skills.items.dev03.tags.2">CSS</span>
+                                    <span data-i18n="skills.items.dev03.tags.3">Web Apps</span>
+                                </div>
+                            </article>
+
+                            <article class="skill-item" data-category="data" data-reveal="up">
+                                <div class="skill-topline">
+                                    <span class="skill-code">DATA-02</span>
+                                    <i class="bx bx-bar-chart-alt-2"></i>
+                                </div>
+                                <h3 data-i18n="skills.items.data02.title">Power BI e visualização</h3>
+                                <p data-i18n="skills.items.data02.copy">Uso de Power BI, dashboards e visualização de dados para comunicar indicadores, apoiar leitura de cenário e tomada de decisão.</p>
+                                <div class="skill-meter" aria-hidden="true">
+                                    <span style="--level: 78%;"></span>
+                                </div>
+                                <div class="skill-meta">
+                                    <strong>78%</strong>
+                                    <span data-i18n="skills.items.data02.meta">Dashboards, visualização e leitura analítica</span>
+                                </div>
+                                <div class="skill-tags">
+                                    <span data-i18n="skills.items.data02.tags.1">Power BI</span>
+                                    <span data-i18n="skills.items.data02.tags.2">Dashboards</span>
+                                    <span data-i18n="skills.items.data02.tags.3">Data Viz</span>
+                                </div>
+                            </article>
+
+                            <article class="skill-item" data-category="infra" data-reveal="up">
+                                <div class="skill-topline">
+                                    <span class="skill-code">INF-01</span>
+                                    <i class="bx bx-terminal"></i>
+                                </div>
+                                <h3 data-i18n="skills.items.infra01.title">Git, GitHub e Linux</h3>
+                                <p data-i18n="skills.items.infra01.copy">Fluxo de versionamento, colaboração em repositórios e uso de ambiente Linux para desenvolvimento, automação e operação.</p>
+                                <div class="skill-meter" aria-hidden="true">
+                                    <span style="--level: 84%;"></span>
+                                </div>
+                                <div class="skill-meta">
+                                    <strong>84%</strong>
+                                    <span data-i18n="skills.items.infra01.meta">Versionamento, terminal e rotina de engenharia</span>
+                                </div>
+                                <div class="skill-tags">
+                                    <span data-i18n="skills.items.infra01.tags.1">Git</span>
+                                    <span data-i18n="skills.items.infra01.tags.2">GitHub</span>
+                                    <span data-i18n="skills.items.infra01.tags.3">Linux</span>
+                                </div>
+                            </article>
+
+                            <article class="skill-item" data-category="infra" data-reveal="up">
+                                <div class="skill-topline">
+                                    <span class="skill-code">INF-02</span>
+                                    <i class="bx bx-cloud"></i>
+                                </div>
+                                <h3 data-i18n="skills.items.infra02.title">Cloud, confiabilidade e produção</h3>
+                                <p data-i18n="skills.items.infra02.copy">Base em OCI, integração de IA com aplicações, sistemas seguros e confiáveis e leitura de produção para escalar com mais segurança.</p>
+                                <div class="skill-meter" aria-hidden="true">
+                                    <span style="--level: 76%;"></span>
+                                </div>
+                                <div class="skill-meta">
+                                    <strong>76%</strong>
+                                    <span data-i18n="skills.items.infra02.meta">Cloud, OCI, confiabilidade e entrega</span>
+                                </div>
+                                <div class="skill-tags">
+                                    <span data-i18n="skills.items.infra02.tags.1">OCI</span>
+                                    <span data-i18n="skills.items.infra02.tags.2">Cloud</span>
+                                    <span data-i18n="skills.items.infra02.tags.3">Production</span>
                                 </div>
                             </article>
                         </div>
@@ -576,20 +679,20 @@
 
                     <aside class="skills-aside" data-reveal="up">
                         <span class="aside-label" data-i18n="skills.aside.label">Filtro ativo</span>
-                        <h3 id="active-filter-label">Todas as camadas</h3>
+                        <h3 id="active-filter-label">Todas as frentes</h3>
                         <p id="active-filter-copy">
-                            Uma visão da minha stack em Engenharia de IA: apps, contexto, qualidade, APIs e entrega.
+                            Uma leitura objetiva das principais áreas que sustentam meu perfil: IA, ML, desenvolvimento, dados e infraestrutura.
                         </p>
 
                         <div class="aside-counter">
-                            <strong id="visible-skill-count">8</strong>
-                            <span data-i18n="skills.aside.counter">camadas em destaque</span>
+                            <strong id="visible-skill-count">13</strong>
+                            <span data-i18n="skills.aside.counter">frentes em destaque</span>
                         </div>
 
                         <ul class="aside-list">
-                            <li data-i18n="skills.aside.list.1">Problema real antes de ferramenta.</li>
-                            <li data-i18n="skills.aside.list.2">Contexto e grounding antes de demo bonita.</li>
-                            <li data-i18n="skills.aside.list.3">Teste e iteração antes de produção.</li>
+                            <li data-i18n="skills.aside.list.1">IA e ML aplicados com base sólida de engenharia.</li>
+                            <li data-i18n="skills.aside.list.2">Desenvolvimento, análise de sistemas e produto.</li>
+                            <li data-i18n="skills.aside.list.3">Dados, visualização e operação em produção.</li>
                         </ul>
                     </aside>
                 </div>

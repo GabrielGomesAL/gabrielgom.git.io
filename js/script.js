@@ -381,6 +381,12 @@ function updateSkillFilter(category) {
         || getDynamicTranslation("skills.filterDetails.all");
     let visibleCount = 0;
 
+    skillFilters.forEach((button) => {
+        const isCurrent = (button.dataset.category || "all") === category;
+        button.classList.toggle("is-active", isCurrent);
+        button.setAttribute("aria-pressed", String(isCurrent));
+    });
+
     skillItems.forEach((item) => {
         const shouldShow = category === "all" || item.dataset.category === category;
         item.hidden = !shouldShow;
@@ -405,8 +411,6 @@ function updateSkillFilter(category) {
 function setupSkillFilters() {
     skillFilters.forEach((button) => {
         button.addEventListener("click", () => {
-            skillFilters.forEach((filter) => filter.classList.remove("is-active"));
-            button.classList.add("is-active");
             updateSkillFilter(button.dataset.category || "all");
         });
     });
