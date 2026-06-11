@@ -5,33 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
         name="description"
-        content="Portfólio de Gabriel Gomes Almeida com foco em Engenharia de IA, aplicações com LLMs, RAG, agentes, avaliação e entrega em produção."
+        content="Portfólio de Gabriel Gomes Almeida focado em cibersegurança ofensiva, Red Team, pentest, Hack The Box CPTS e desenvolvimento seguro."
     >
-    <title>Gabriel Gomes Almeida | Engenharia de IA</title>
-    <link rel="icon" type="image/png" href="img/image.png">
-    <link rel="shortcut icon" href="img/image.png">
+    <title>Gabriel Gomes Almeida | Red Team & Pentest</title>
+    <link rel="icon" type="image/svg+xml" href="img/favicon-cyber.svg">
+    <link rel="shortcut icon" href="img/favicon-cyber.svg">
     <link rel="apple-touch-icon" href="img/image.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
     >
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <div class="page-ambient" aria-hidden="true">
-        <span class="ambient-orb orb-a"></span>
-        <span class="ambient-orb orb-b"></span>
-        <span class="ambient-orb orb-c"></span>
-    </div>
+<body data-htb-progress-endpoint="">
+    <div class="noise-layer" aria-hidden="true"></div>
     <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
     <header class="site-header">
         <div class="header-shell">
             <a href="#home" class="brand" aria-label="Ir para o início do portfólio" data-i18n-aria-label="header.brandAria">
-                Gabriel Gomes Almeida
+                <span class="brand-mark" aria-hidden="true">G</span>
+                <span>Gabriel Gomes</span>
             </a>
 
             <button
@@ -49,210 +46,122 @@
 
             <nav id="site-nav" class="site-nav" aria-label="Navegação principal" data-i18n-aria-label="header.navAria">
                 <a href="#home" class="is-active" data-i18n="nav.home">Início</a>
-                <a href="#positioning" data-i18n="nav.profile">Perfil</a>
-                <a href="#experience" data-i18n="nav.experience">Experiências</a>
+                <a href="#profile" data-i18n="nav.profile">Perfil</a>
+                <a href="#experience" data-i18n="nav.experience">Experiência</a>
                 <a href="#projects" data-i18n="nav.projects">Projetos</a>
-                <a href="#skills" data-i18n="nav.stack">Stack</a>
-                <a href="#workflow" data-i18n="nav.workflow">Fluxo</a>
+                <a href="#knowledge" data-i18n="nav.knowledge">Conhecimento</a>
+                <a href="#badges" data-i18n="nav.badges">Badges</a>
                 <a href="#contact" data-i18n="nav.contact">Contato</a>
             </nav>
 
             <div class="language-switcher" aria-label="Selecionar idioma" data-i18n-aria-label="header.languageAria">
-                <button class="language-option is-active" type="button" data-lang="pt" aria-pressed="true">
-                    <span class="language-short">PT</span>
-                </button>
-                <button class="language-option" type="button" data-lang="en" aria-pressed="false">
-                    <span class="language-short">EN</span>
-                </button>
-                <button class="language-option" type="button" data-lang="es" aria-pressed="false">
-                    <span class="language-short">ES</span>
-                </button>
+                <button class="language-option is-active" type="button" data-lang="pt" aria-pressed="true">PT</button>
+                <button class="language-option" type="button" data-lang="en" aria-pressed="false">EN</button>
+                <button class="language-option" type="button" data-lang="es" aria-pressed="false">ES</button>
             </div>
         </div>
     </header>
 
     <main>
         <section id="home" class="hero section">
+            <canvas id="cyber3d" class="cyber-scene" aria-hidden="true"></canvas>
             <div class="section-shell hero-shell">
                 <div class="hero-copy" data-reveal="up">
-                    <p class="eyebrow" data-i18n="hero.eyebrow">AI Engineering · GenAI Systems · Product Delivery</p>
-                    <h1 data-i18n-html="hero.titleHtml">
-                        Construindo
-                        <span>sistemas de IA prontos para produção.</span>
-                    </h1>
-                    <p class="hero-text" data-i18n="hero.text">
-                        Sou Gabriel Gomes Almeida, graduado em Análise e Desenvolvimento de Sistemas.
-                        Estou direcionando minha carreira para Engenharia de IA, com foco em aplicações
-                        com modelos generativos, APIs, agentes, grounding, avaliação e entrega end-to-end.
+                    <p class="eyebrow" data-i18n="hero.eyebrow">Red Team · Pentest · Segurança Ofensiva</p>
+                    <h1 data-i18n-html="hero.titleHtml">Gabriel Gomes Almeida</h1>
+                    <p class="hero-lead" data-i18n="hero.lead">
+                        Portfólio focado em cibersegurança ofensiva, com estudo prático em Red Team, pentest,
+                        enumeração, exploração controlada, documentação técnica e desenvolvimento seguro.
                     </p>
-                    <div class="hero-badges" aria-label="Resumo profissional" data-i18n-aria-label="hero.badges.aria">
-                        <span class="hero-badge" data-i18n="hero.badges.location">Brasília · Híbrido</span>
-                        <span class="hero-badge" data-i18n="hero.badges.degree">Graduado em ADS</span>
-                        <span class="hero-badge" data-i18n="hero.badges.current">Atualmente no TJDFT</span>
-                    </div>
 
                     <div class="hero-actions">
-                        <a
-                            href="img/CURRICULO  2.0 PT.pdf"
-                            download="Gabriel_Gomes_Almeida_CV_2.0_PT.pdf"
-                            class="btn btn-primary"
-                            data-i18n="hero.actions.cv"
-                        >
-                            Baixar CV
+                        <a href="#badges" class="btn btn-primary">
+                            <i class="bx bx-badge-check"></i>
+                            <span data-i18n="hero.actions.badges">Ver progresso CPTS</span>
                         </a>
-                        <a href="#projects" class="btn btn-secondary" data-i18n="hero.actions.projects">Ver projetos</a>
+                        <a href="#projects" class="btn btn-secondary">
+                            <i class="bx bxl-github"></i>
+                            <span data-i18n="hero.actions.projects">Ver projetos</span>
+                        </a>
                     </div>
 
-                    <ul class="hero-metrics" aria-label="Destaques do perfil" data-i18n-aria-label="hero.metrics.aria">
-                        <li>
-                            <strong data-i18n="hero.metrics.products.title">LLM Products</strong>
-                            <span data-i18n="hero.metrics.products.copy">Aplicações com contexto, fluxo claro e utilidade real.</span>
-                        </li>
-                        <li>
-                            <strong data-i18n="hero.metrics.quality.title">Quality Layer</strong>
-                            <span data-i18n="hero.metrics.quality.copy">RAG, evals e melhoria contínua do comportamento.</span>
-                        </li>
-                        <li>
-                            <strong data-i18n="hero.metrics.execution.title">Execution</strong>
-                            <span data-i18n="hero.metrics.execution.copy">Back-end, integração, deploy e visão de produto.</span>
-                        </li>
-                    </ul>
-
-                    <div class="social-strip" aria-label="Redes profissionais" data-i18n-aria-label="hero.socialAria">
-                        <a
-                            href="https://www.linkedin.com/in/gabriel-gomes-almeida-b85215340/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <i class="bx bxl-linkedin-square"></i>
-                            LinkedIn
-                        </a>
-                        <a
-                            href="https://github.com/GabrielGomesAL"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <i class="bx bxl-github"></i>
-                            GitHub
-                        </a>
+                    <div class="hero-status" aria-label="Resumo profissional" data-i18n-aria-label="hero.statusAria">
+                        <div>
+                            <span data-i18n="hero.status.focus.label">Foco atual</span>
+                            <strong data-i18n="hero.status.focus.value">Red Team & Pentest</strong>
+                        </div>
+                        <div>
+                            <span data-i18n="hero.status.cert.label">HTB CPTS</span>
+                            <strong><span data-progress-text>25%</span> <span data-i18n="hero.status.cert.value">concluído</span></strong>
+                        </div>
+                        <div>
+                            <span data-i18n="hero.status.base.label">Base técnica</span>
+                            <strong data-i18n="hero.status.base.value">ADS · Linux · Python</strong>
+                        </div>
                     </div>
                 </div>
 
                 <div class="hero-visual" data-reveal="scale">
-                    <div class="system-stage">
-                        <div class="system-ring ring-a"></div>
-                        <div class="system-ring ring-b"></div>
+                    <div class="portrait-panel">
+                        <img
+                            src="img/hero-gabriel.png"
+                            alt="Foto de Gabriel Gomes Almeida"
+                            data-i18n-alt="hero.photoAlt"
+                            loading="eager"
+                            decoding="async"
+                        >
+                        <div class="portrait-overlay" aria-hidden="true"></div>
+                    </div>
 
-                        <div class="system-node node-main">
-                            <span class="node-label" data-i18n="hero.stage.main.label">AI Engineer Profile</span>
-                            <strong data-i18n="hero.stage.main.copy">LLM apps, contexto, avaliação e entrega.</strong>
+                    <div class="terminal-panel" aria-label="Resumo de metodologia ofensiva" data-i18n-aria-label="hero.terminalAria">
+                        <div class="terminal-top">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <strong>ops@portfolio</strong>
                         </div>
-
-                        <div class="profile-frame">
-                            <div class="profile-grid"></div>
-                            <img
-                                src="img/hero-gabriel.png"
-                                alt="Foto de Gabriel Gomes Almeida"
-                                data-i18n-alt="hero.stage.photoAlt"
-                                loading="eager"
-                                decoding="async"
-                            >
+                        <div class="terminal-body">
+                            <p><span>$</span> scope --define</p>
+                            <p><span>$</span> recon --enumerate</p>
+                            <p><span>$</span> validate --evidence</p>
+                            <p><span>$</span> report --clarity</p>
                         </div>
-
-                        <div class="system-node node-a">
-                            <span class="node-label" data-i18n="hero.stage.context.label">Contexto</span>
-                            <strong data-i18n="hero.stage.context.copy">RAG, grounding e recuperação de informação.</strong>
-                        </div>
-
-                        <div class="system-node node-b">
-                            <span class="node-label" data-i18n="hero.stage.quality.label">Qualidade</span>
-                            <strong data-i18n="hero.stage.quality.copy">Evals, logs, feedback e regressão.</strong>
-                        </div>
-
-                        <div class="system-node node-c">
-                            <span class="node-label" data-i18n="hero.stage.delivery.label">Entrega</span>
-                            <strong data-i18n="hero.stage.delivery.copy">APIs, integrações, deploy e iteração.</strong>
-                        </div>
-
-                        <div class="system-pill pill-a" data-i18n="hero.stage.pills.python">Python</div>
-                        <div class="system-pill pill-b" data-i18n="hero.stage.pills.apis">APIs</div>
-                        <div class="system-pill pill-c" data-i18n="hero.stage.pills.rag">RAG</div>
-                        <div class="system-pill pill-d" data-i18n="hero.stage.pills.agents">Agents</div>
-                        <div class="system-pill pill-e" data-i18n="hero.stage.pills.evals">Evals</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="positioning" class="section positioning-section">
+        <section id="profile" class="section profile-section">
             <div class="section-shell">
                 <div class="section-heading" data-reveal="up">
-                    <p class="eyebrow" data-i18n="positioning.eyebrow">Posicionamento profissional</p>
-                    <h2 data-i18n="positioning.title">Engenharia de IA com clareza técnica e entrega real.</h2>
-                    <p data-i18n="positioning.copy">
-                        Um perfil orientado à construção de sistemas de IA com contexto, confiabilidade,
-                        integração e leitura clara de produto.
+                    <p class="eyebrow" data-i18n="profile.eyebrow">Perfil ofensivo</p>
+                    <h2 data-i18n="profile.title">Pentest com método, evidência e comunicação clara.</h2>
+                    <p data-i18n="profile.copy">
+                        Atuo com mentalidade de análise ofensiva ética: entender superfície de ataque,
+                        validar riscos em ambientes autorizados e transformar achados em recomendações úteis.
                     </p>
                 </div>
 
-                <div class="positioning-grid">
-                    <article class="positioning-highlight" data-reveal="up">
-                        <p class="quote-mark">“</p>
-                        <p class="positioning-quote" data-i18n="positioning.quote">
-                            Construo sistemas de IA que combinam contexto, qualidade e produto em uma mesma camada de execução.
-                        </p>
+                <div class="profile-grid">
+                    <article class="profile-card" data-reveal="up">
+                        <span>01</span>
+                        <h3 data-i18n="profile.cards.recon.title">Reconhecimento e enumeração</h3>
+                        <p data-i18n="profile.cards.recon.copy">Mapeamento de serviços, tecnologias, portas, rotas e pistas técnicas antes de qualquer validação.</p>
                     </article>
-
-                    <div class="positioning-stack" data-reveal="up">
-                        <div class="positioning-block">
-                            <span data-i18n="positioning.blocks.education.label">Formação</span>
-                            <strong data-i18n="positioning.blocks.education.value">Graduado em Análise e Desenvolvimento de Sistemas</strong>
-                        </div>
-                        <div class="positioning-block">
-                            <span data-i18n="positioning.blocks.direction.label">Direção</span>
-                            <strong data-i18n="positioning.blocks.direction.value">LLMs, APIs, automação e experiências orientadas a produto</strong>
-                        </div>
-                        <div class="positioning-block">
-                            <span data-i18n="positioning.blocks.objective.label">Objetivo</span>
-                            <strong data-i18n="positioning.blocks.objective.value">Soluções de IA úteis, claras e prontas para evoluir</strong>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="positioning-points" data-reveal="up">
-                    <span class="point-chip" data-i18n="positioning.points.context">Contexto bem definido</span>
-                    <span class="point-chip" data-i18n="positioning.points.quality">Qualidade observável</span>
-                    <span class="point-chip" data-i18n="positioning.points.delivery">Entrega para uso real</span>
-                </div>
-
-                <div class="signals-grid">
-                    <article class="signal-card" data-reveal="up">
-                        <span class="signal-index">01</span>
-                        <h3 data-i18n="positioning.signals.communication.title">Comunicação técnica</h3>
-                        <p data-i18n="positioning.signals.communication.copy">
-                            Traduzo arquitetura, trade-offs e impacto de negócio com clareza para produto e time.
-                        </p>
+                    <article class="profile-card" data-reveal="up">
+                        <span>02</span>
+                        <h3 data-i18n="profile.cards.web.title">Web, APIs e aplicações</h3>
+                        <p data-i18n="profile.cards.web.copy">Leitura de fluxos, autenticação, autorização, entradas, exposição de dados e riscos comuns de aplicação.</p>
                     </article>
-                    <article class="signal-card" data-reveal="up">
-                        <span class="signal-index">02</span>
-                        <h3 data-i18n="positioning.signals.ownership.title">Ownership end-to-end</h3>
-                        <p data-i18n="positioning.signals.ownership.copy">
-                            Penso do caso de uso até API, interface, testes e iteração depois do primeiro deploy.
-                        </p>
+                    <article class="profile-card" data-reveal="up">
+                        <span>03</span>
+                        <h3 data-i18n="profile.cards.system.title">Linux, redes e sistemas</h3>
+                        <p data-i18n="profile.cards.system.copy">Base prática em terminal, TCP/IP, ambientes Linux, versionamento, automação e análise de comportamento.</p>
                     </article>
-                    <article class="signal-card" data-reveal="up">
-                        <span class="signal-index">03</span>
-                        <h3 data-i18n="positioning.signals.grounding.title">Grounding e contexto</h3>
-                        <p data-i18n="positioning.signals.grounding.copy">
-                            Busco respostas mais precisas e úteis com contexto recuperado, dados externos e instruções bem definidas.
-                        </p>
-                    </article>
-                    <article class="signal-card" data-reveal="up">
-                        <span class="signal-index">04</span>
-                        <h3 data-i18n="positioning.signals.evaluation.title">Avaliação contínua</h3>
-                        <p data-i18n="positioning.signals.evaluation.copy">
-                            Encaro qualidade em IA como processo: testar cedo, registrar casos e melhorar comportamento ao longo do tempo.
-                        </p>
+                    <article class="profile-card" data-reveal="up">
+                        <span>04</span>
+                        <h3 data-i18n="profile.cards.report.title">Relatório e priorização</h3>
+                        <p data-i18n="profile.cards.report.copy">Registro de evidências, impacto, reprodução segura, severidade e recomendações que ajudam o time a corrigir.</p>
                     </article>
                 </div>
             </div>
@@ -261,93 +170,54 @@
         <section id="experience" class="section experience-section">
             <div class="section-shell">
                 <div class="section-heading compact" data-reveal="up">
-                    <p class="eyebrow" data-i18n="experience.eyebrow">Experiências</p>
-                    <h2 data-i18n="experience.title">Experiência prática em desenvolvimento, automação e IA.</h2>
+                    <p class="eyebrow" data-i18n="experience.eyebrow">Experiência</p>
+                    <h2 data-i18n="experience.title">Desenvolvimento, automação e segurança aplicada.</h2>
                     <p data-i18n="experience.copy">
-                        Atuação em sistemas, integrações, automações e aplicação prática de IA em contexto institucional e corporativo.
+                        Minha base profissional vem de sistemas reais, suporte técnico, integrações e melhoria de processos,
+                        agora direcionada para segurança ofensiva e desenvolvimento mais seguro.
                     </p>
                 </div>
 
-                <div class="experience-shell">
-                    <aside class="experience-intro" data-reveal="up">
-                        <span class="aside-label" data-i18n="experience.intro.label">Leitura rápida</span>
-                        <h3 data-i18n="experience.intro.title">Sistemas reais, não só protótipos</h3>
-                        <p data-i18n="experience.intro.copy">
-                            Experiências com manutenção, evolução de sistemas e melhoria de processos com visão de produto e operação.
-                        </p>
-                    </aside>
-
-                    <div class="experience-grid">
-                        <article class="experience-card" data-reveal="up">
-                            <div class="experience-topline">
-                                <span class="experience-pill" data-i18n="experience.tjdft.org">TJDFT</span>
-                                <span class="experience-pill" data-i18n="experience.tjdft.location">Híbrido · Brasília</span>
-                            </div>
-                            <div class="experience-header">
-                                <div>
-                                    <h3 data-i18n="experience.tjdft.role">Desenvolvedor</h3>
-                                    <p class="experience-company" data-i18n="experience.tjdft.company">TJDFT · Estágio</p>
-                                </div>
-                                <p class="experience-period" data-i18n="experience.tjdft.period">out de 2025 - o momento · 7 meses</p>
-                            </div>
-                            <p class="experience-summary" data-i18n="experience.tjdft.summary">
-                                Atuação no apoio ao desenvolvimento e manutenção de sistemas internos, com foco
-                                na automação de processos administrativos e de capacitação institucional, incluindo
-                                melhorias com IA para ganho de produtividade, apoio à análise de demandas e suporte
-                                a fluxos mais inteligentes dentro do ambiente institucional.
+                <div class="timeline">
+                    <article class="timeline-item" data-reveal="up">
+                        <div class="timeline-meta">
+                            <span data-i18n="experience.tjdft.org">TJDFT</span>
+                            <strong data-i18n="experience.tjdft.period">out 2025 · atual</strong>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 data-i18n="experience.tjdft.role">Desenvolvedor · Estágio</h3>
+                            <p data-i18n="experience.tjdft.copy">
+                                Apoio no desenvolvimento e manutenção de sistemas internos, automações,
+                                integração de plataformas, suporte técnico e melhoria de portais e dashboards institucionais.
                             </p>
-                            <div class="experience-impact">
-                                <span class="impact-pill" data-i18n="experience.tjdft.impact.automation">Automação interna</span>
-                                <span class="impact-pill" data-i18n="experience.tjdft.impact.integration">Integração de sistemas</span>
-                                <span class="impact-pill" data-i18n="experience.tjdft.impact.support">Suporte institucional</span>
+                            <div class="tag-row">
+                                <span data-i18n="experience.tjdft.tags.1">Sistemas internos</span>
+                                <span data-i18n="experience.tjdft.tags.2">Automação</span>
+                                <span data-i18n="experience.tjdft.tags.3">Suporte técnico</span>
+                                <span data-i18n="experience.tjdft.tags.4">Segurança aplicada</span>
                             </div>
-                            <ul class="experience-list">
-                                <li data-i18n="experience.tjdft.list.1">Apoio no planejamento e desenvolvimento de sistemas tecnológicos de gestão.</li>
-                                <li data-i18n="experience.tjdft.list.2">Atualização, integração e melhoria contínua dos sistemas utilizados pelas unidades do TJDFT.</li>
-                                <li data-i18n="experience.tjdft.list.3">Integração de sistemas internos com plataformas de gestão de pessoas e rotinas administrativas.</li>
-                                <li data-i18n="experience.tjdft.list.4">Suporte à infraestrutura tecnológica disponibilizada pela área de TI.</li>
-                                <li data-i18n="experience.tjdft.list.5">Colaboração com o grupo gestor no alinhamento entre áreas de negócio e TI.</li>
-                                <li data-i18n="experience.tjdft.list.6">Suporte técnico a usuários internos e externos.</li>
-                                <li data-i18n="experience.tjdft.list.7">Participação no desenvolvimento e atualização de portais institucionais e dashboards gerenciais.</li>
-                                <li data-i18n="experience.tjdft.list.8">Aplicação de automações e soluções com IA para apoiar processos internos, organização de informação e eficiência operacional.</li>
-                            </ul>
-                        </article>
+                        </div>
+                    </article>
 
-                        <article class="experience-card" data-reveal="up">
-                            <div class="experience-topline">
-                                <span class="experience-pill" data-i18n="experience.rp.org">RP Prospecção</span>
-                                <span class="experience-pill" data-i18n="experience.rp.location">Híbrido · Brasília</span>
-                            </div>
-                            <div class="experience-header">
-                                <div>
-                                    <h3 data-i18n="experience.rp.role">Desenvolvedor</h3>
-                                    <p class="experience-company" data-i18n="experience.rp.company">RP Prospecção · Meio período</p>
-                                </div>
-                                <p class="experience-period" data-i18n="experience.rp.period">jan de 2023 - nov de 2024 · 1 ano 11 meses</p>
-                            </div>
-                            <p class="experience-summary" data-i18n="experience.rp.summary">
-                                Atuação no desenvolvimento, manutenção e otimização de sistemas para atender às
-                                necessidades operacionais e estratégicas da empresa, incluindo levantamento de requisitos,
-                                integração entre plataformas e implementação de recursos com IA para automatizar tarefas,
-                                apoiar análises e aumentar a produtividade das equipes.
+                    <article class="timeline-item" data-reveal="up">
+                        <div class="timeline-meta">
+                            <span data-i18n="experience.rp.org">RP Prospecção</span>
+                            <strong data-i18n="experience.rp.period">jan 2023 · nov 2024</strong>
+                        </div>
+                        <div class="timeline-content">
+                            <h3 data-i18n="experience.rp.role">Desenvolvedor · Meio período</h3>
+                            <p data-i18n="experience.rp.copy">
+                                Desenvolvimento, manutenção e otimização de sistemas, levantamento de requisitos,
+                                integrações entre plataformas, testes, validações, documentação e treinamento de equipes.
                             </p>
-                            <div class="experience-impact">
-                                <span class="impact-pill" data-i18n="experience.rp.impact.development">Desenvolvimento interno</span>
-                                <span class="impact-pill" data-i18n="experience.rp.impact.integrations">Integrações</span>
-                                <span class="impact-pill" data-i18n="experience.rp.impact.ai">IA aplicada</span>
+                            <div class="tag-row">
+                                <span data-i18n="experience.rp.tags.1">Full stack</span>
+                                <span data-i18n="experience.rp.tags.2">Integrações</span>
+                                <span data-i18n="experience.rp.tags.3">Testes</span>
+                                <span data-i18n="experience.rp.tags.4">Documentação</span>
                             </div>
-                            <ul class="experience-list">
-                                <li data-i18n="experience.rp.list.1">Levantamento de requisitos junto aos usuários e tradução de demandas em soluções técnicas.</li>
-                                <li data-i18n="experience.rp.list.2">Desenvolvimento, manutenção e otimização de sistemas internos para operação e estratégia.</li>
-                                <li data-i18n="experience.rp.list.3">Implementação e integração de sistemas, garantindo comunicação fluida entre diferentes plataformas.</li>
-                                <li data-i18n="experience.rp.list.4">Liderança de testes e validações para assegurar a qualidade das entregas.</li>
-                                <li data-i18n="experience.rp.list.5">Suporte técnico e treinamento para as equipes envolvidas.</li>
-                                <li data-i18n="experience.rp.list.6">Identificação de oportunidades para automatizar tarefas e aumentar a produtividade.</li>
-                                <li data-i18n="experience.rp.list.7">Implementação de soluções com IA para acelerar rotinas, melhorar processos internos e apoiar tomadas de decisão.</li>
-                                <li data-i18n="experience.rp.list.8">Documentação técnica e colaboração com times de desenvolvimento alinhados às melhores práticas do mercado.</li>
-                            </ul>
-                        </article>
-                    </div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -355,419 +225,185 @@
         <section id="projects" class="section projects-section">
             <div class="section-shell">
                 <div class="section-heading compact" data-reveal="up">
-                    <p class="eyebrow" data-i18n="projects.eyebrow">Projetos do GitHub</p>
-                    <h2 data-i18n="projects.title">Projetos públicos com IA, integração e produto.</h2>
+                    <p class="eyebrow" data-i18n="projects.eyebrow">Projetos</p>
+                    <h2 data-i18n="projects.title">Repositórios públicos com leitura técnica e foco em segurança.</h2>
                     <p data-i18n="projects.copy">
-                        Repositórios que destacam integração, automação, IA aplicada e base sólida de engenharia.
+                        Projetos do GitHub organizados para mostrar raciocínio, automação, desenvolvimento e base para segurança ofensiva.
                     </p>
                 </div>
 
-                <div class="projects-shell">
-                    <aside class="projects-intro" data-reveal="up">
-                        <span class="aside-label" data-i18n="projects.intro.label">Leitura rápida</span>
-                        <h3 data-i18n="projects.intro.title">Código que mostra construção</h3>
-                        <p data-i18n="projects.intro.copy">
-                            Projetos com foco em caso de uso, integração e qualidade de execução.
-                        </p>
-                        <p id="projects-status" class="projects-status" data-i18n="projects.status.loading">Carregando repositórios públicos...</p>
-                    </aside>
-
-                    <div
-                        id="projects-grid"
-                        class="projects-grid"
-                        data-reveal="up"
-                        aria-live="polite"
-                        aria-busy="true"
-                    ></div>
-                </div>
+                <p id="projects-status" class="projects-status" data-i18n="projects.status.loading">Carregando repositórios públicos...</p>
+                <div id="projects-grid" class="projects-grid" aria-live="polite" aria-busy="true"></div>
             </div>
         </section>
 
-        <section id="skills" class="section skills-section">
+        <section id="knowledge" class="section knowledge-section">
             <div class="section-shell">
                 <div class="section-heading compact" data-reveal="up">
-                    <p class="eyebrow" data-i18n="skills.eyebrow">Stack principal</p>
-                    <h2 data-i18n="skills.title">IA, ML, desenvolvimento, dados e infraestrutura em uma leitura clara.</h2>
+                    <p class="eyebrow" data-i18n="knowledge.eyebrow">Conhecimento</p>
+                    <h2 data-i18n="knowledge.title">Base técnica para Red Team e pentest.</h2>
                 </div>
 
-                <div class="skills-layout">
-                    <div class="skills-main">
-                        <div class="skills-toolbar" data-reveal="up" aria-label="Filtrar competências" data-i18n-aria-label="skills.toolbarAria">
-                            <button class="skill-filter is-active" data-category="all" type="button" aria-pressed="true" data-i18n="skills.filters.all">Todas</button>
-                            <button class="skill-filter" data-category="ai" type="button" aria-pressed="false" data-i18n="skills.filters.ai">IA</button>
-                            <button class="skill-filter" data-category="ml" type="button" aria-pressed="false" data-i18n="skills.filters.ml">ML</button>
-                            <button class="skill-filter" data-category="dev" type="button" aria-pressed="false" data-i18n="skills.filters.dev">Dev</button>
-                            <button class="skill-filter" data-category="data" type="button" aria-pressed="false" data-i18n="skills.filters.data">Dados</button>
-                            <button class="skill-filter" data-category="infra" type="button" aria-pressed="false" data-i18n="skills.filters.infra">Infra</button>
-                        </div>
+                <div class="knowledge-toolbar" data-reveal="up" aria-label="Filtrar conhecimentos" data-i18n-aria-label="knowledge.toolbarAria">
+                    <button class="knowledge-filter is-active" type="button" data-category="all" aria-pressed="true" data-i18n="knowledge.filters.all">Tudo</button>
+                    <button class="knowledge-filter" type="button" data-category="offensive" aria-pressed="false" data-i18n="knowledge.filters.offensive">Ofensiva</button>
+                    <button class="knowledge-filter" type="button" data-category="web" aria-pressed="false" data-i18n="knowledge.filters.web">Web/API</button>
+                    <button class="knowledge-filter" type="button" data-category="systems" aria-pressed="false" data-i18n="knowledge.filters.systems">Sistemas</button>
+                    <button class="knowledge-filter" type="button" data-category="dev" aria-pressed="false" data-i18n="knowledge.filters.dev">Dev</button>
+                    <button class="knowledge-filter" type="button" data-category="data" aria-pressed="false" data-i18n="knowledge.filters.data">Dados</button>
+                </div>
 
-                        <div class="skills-grid">
-                            <article class="skill-item" data-category="ai" data-reveal="up">
-                                <div class="skill-topline">
-                                    <span class="skill-code">AI-01</span>
-                                    <i class="bx bx-brain"></i>
-                                </div>
-                                <h3 data-i18n="skills.items.ai01.title">Aplicações com IA e agentes</h3>
-                                <p data-i18n="skills.items.ai01.copy">Crio aplicações com LLMs, agentes, tools e fluxos orientados a produto, com foco em utilidade real e boa experiência.</p>
-                                <div class="skill-meter" aria-hidden="true">
-                                    <span style="--level: 87%;"></span>
-                                </div>
-                                <div class="skill-meta">
-                                    <strong>87%</strong>
-                                    <span data-i18n="skills.items.ai01.meta">LLM apps, agentes, prompting e experiências práticas</span>
-                                </div>
-                                <div class="skill-tags">
-                                    <span data-i18n="skills.items.ai01.tags.1">Agents</span>
-                                    <span data-i18n="skills.items.ai01.tags.2">Prompting</span>
-                                    <span data-i18n="skills.items.ai01.tags.3">GenAI</span>
-                                </div>
-                            </article>
-
-                            <article class="skill-item" data-category="ai" data-reveal="up">
-                                <div class="skill-topline">
-                                    <span class="skill-code">AI-02</span>
-                                    <i class="bx bx-search-alt-2"></i>
-                                </div>
-                                <h3 data-i18n="skills.items.ai02.title">RAG, evals e benchmarks</h3>
-                                <p data-i18n="skills.items.ai02.copy">Estruturo contexto, recuperação inteligente, avaliação de desempenho e análise comparativa para melhorar qualidade e confiança.</p>
-                                <div class="skill-meter" aria-hidden="true">
-                                    <span style="--level: 83%;"></span>
-                                </div>
-                                <div class="skill-meta">
-                                    <strong>83%</strong>
-                                    <span data-i18n="skills.items.ai02.meta">RAG, métricas, regressão e qualidade observável</span>
-                                </div>
-                                <div class="skill-tags">
-                                    <span data-i18n="skills.items.ai02.tags.1">RAG</span>
-                                    <span data-i18n="skills.items.ai02.tags.2">Evals</span>
-                                    <span data-i18n="skills.items.ai02.tags.3">Benchmarks</span>
-                                </div>
-                            </article>
-
-                            <article class="skill-item" data-category="ai" data-reveal="up">
-                                <div class="skill-topline">
-                                    <span class="skill-code">AI-03</span>
-                                    <i class="bx bx-network-chart"></i>
-                                </div>
-                                <h3 data-i18n="skills.items.ai03.title">Ecossistema H2O.ai e orquestração</h3>
-                                <p data-i18n="skills.items.ai03.copy">Tenho vivência com arquitetura de agentes, workflows agentic, h2oGPTe e integração entre IA preditiva e generativa.</p>
-                                <div class="skill-meter" aria-hidden="true">
-                                    <span style="--level: 80%;"></span>
-                                </div>
-                                <div class="skill-meta">
-                                    <strong>80%</strong>
-                                    <span data-i18n="skills.items.ai03.meta">H2O.ai, agentes, integrações e fluxos de trabalho</span>
-                                </div>
-                                <div class="skill-tags">
-                                    <span data-i18n="skills.items.ai03.tags.1">H2O.ai</span>
-                                    <span data-i18n="skills.items.ai03.tags.2">Agentic</span>
-                                    <span data-i18n="skills.items.ai03.tags.3">Workflows</span>
-                                </div>
-                            </article>
-
-                            <article class="skill-item" data-category="ml" data-reveal="up">
-                                <div class="skill-topline">
-                                    <span class="skill-code">ML-01</span>
-                                    <i class="bx bx-line-chart"></i>
-                                </div>
-                                <h3 data-i18n="skills.items.ml01.title">Machine Learning com Python</h3>
-                                <p data-i18n="skills.items.ml01.copy">Base prática em Python para Machine Learning, com Scikit-Learn, treino de modelos e leitura aplicada de problemas preditivos.</p>
-                                <div class="skill-meter" aria-hidden="true">
-                                    <span style="--level: 84%;"></span>
-                                </div>
-                                <div class="skill-meta">
-                                    <strong>84%</strong>
-                                    <span data-i18n="skills.items.ml01.meta">Python, Scikit-Learn e fundamentos de ML</span>
-                                </div>
-                                <div class="skill-tags">
-                                    <span data-i18n="skills.items.ml01.tags.1">Python</span>
-                                    <span data-i18n="skills.items.ml01.tags.2">Scikit-Learn</span>
-                                    <span data-i18n="skills.items.ml01.tags.3">ML</span>
-                                </div>
-                            </article>
-
-                            <article class="skill-item" data-category="ml" data-reveal="up">
-                                <div class="skill-topline">
-                                    <span class="skill-code">ML-02</span>
-                                    <i class="bx bx-target-lock"></i>
-                                </div>
-                                <h3 data-i18n="skills.items.ml02.title">Modelagem preditiva e avaliação</h3>
-                                <p data-i18n="skills.items.ml02.copy">Experiência com modelagem preditiva, avaliação de modelos, métricas, benchmarks e tomada de decisão baseada em desempenho.</p>
-                                <div class="skill-meter" aria-hidden="true">
-                                    <span style="--level: 79%;"></span>
-                                </div>
-                                <div class="skill-meta">
-                                    <strong>79%</strong>
-                                    <span data-i18n="skills.items.ml02.meta">Predição, métricas, avaliação e melhoria</span>
-                                </div>
-                                <div class="skill-tags">
-                                    <span data-i18n="skills.items.ml02.tags.1">Predictive</span>
-                                    <span data-i18n="skills.items.ml02.tags.2">Metrics</span>
-                                    <span data-i18n="skills.items.ml02.tags.3">Evaluation</span>
-                                </div>
-                            </article>
-
-                            <article class="skill-item" data-category="dev" data-reveal="up">
-                                <div class="skill-topline">
-                                    <span class="skill-code">DEV-01</span>
-                                    <i class="bx bx-code-alt"></i>
-                                </div>
-                                <h3 data-i18n="skills.items.dev01.title">Python, JavaScript e Node.js</h3>
-                                <p data-i18n="skills.items.dev01.copy">Linguagens e stack prática para construir APIs, automações, integrações e aplicações modernas com boa base de desenvolvimento.</p>
-                                <div class="skill-meter" aria-hidden="true">
-                                    <span style="--level: 89%;"></span>
-                                </div>
-                                <div class="skill-meta">
-                                    <strong>89%</strong>
-                                    <span data-i18n="skills.items.dev01.meta">Python, JavaScript, Node.js e execução prática</span>
-                                </div>
-                                <div class="skill-tags">
-                                    <span data-i18n="skills.items.dev01.tags.1">Python</span>
-                                    <span data-i18n="skills.items.dev01.tags.2">JavaScript</span>
-                                    <span data-i18n="skills.items.dev01.tags.3">Node.js</span>
-                                </div>
-                            </article>
-
-                            <article class="skill-item" data-category="dev" data-reveal="up">
-                                <div class="skill-topline">
-                                    <span class="skill-code">DEV-02</span>
-                                    <i class="bx bx-layer"></i>
-                                </div>
-                                <h3 data-i18n="skills.items.dev02.title">Análise de sistemas e full stack</h3>
-                                <p data-i18n="skills.items.dev02.copy">Atuação com análise de sistemas, desenvolvimento full stack, software e organização técnica de soluções ponta a ponta.</p>
-                                <div class="skill-meter" aria-hidden="true">
-                                    <span style="--level: 85%;"></span>
-                                </div>
-                                <div class="skill-meta">
-                                    <strong>85%</strong>
-                                    <span data-i18n="skills.items.dev02.meta">Sistemas, software e visão end-to-end</span>
-                                </div>
-                                <div class="skill-tags">
-                                    <span data-i18n="skills.items.dev02.tags.1">Full Stack</span>
-                                    <span data-i18n="skills.items.dev02.tags.2">Systems</span>
-                                    <span data-i18n="skills.items.dev02.tags.3">APIs</span>
-                                </div>
-                            </article>
-
-                            <article class="skill-item" data-category="data" data-reveal="up">
-                                <div class="skill-topline">
-                                    <span class="skill-code">DATA-01</span>
-                                    <i class="bx bx-data"></i>
-                                </div>
-                                <h3 data-i18n="skills.items.data01.title">SQL, NoSQL e análise de dados</h3>
-                                <p data-i18n="skills.items.data01.copy">Conhecimento em bancos relacionais e não relacionais, análise de dados e leitura estruturada de informação para apoiar produto e operação.</p>
-                                <div class="skill-meter" aria-hidden="true">
-                                    <span style="--level: 82%;"></span>
-                                </div>
-                                <div class="skill-meta">
-                                    <strong>82%</strong>
-                                    <span data-i18n="skills.items.data01.meta">SQL, NoSQL, análise e estruturação</span>
-                                </div>
-                                <div class="skill-tags">
-                                    <span data-i18n="skills.items.data01.tags.1">SQL</span>
-                                    <span data-i18n="skills.items.data01.tags.2">NoSQL</span>
-                                    <span data-i18n="skills.items.data01.tags.3">Analytics</span>
-                                </div>
-                            </article>
-
-                            <article class="skill-item" data-category="ml" data-reveal="up">
-                                <div class="skill-topline">
-                                    <span class="skill-code">ML-03</span>
-                                    <i class="bx bx-bulb"></i>
-                                </div>
-                                <h3 data-i18n="skills.items.ml03.title">Recomendação e aplicações práticas</h3>
-                                <p data-i18n="skills.items.ml03.copy">Consigo conectar fundamentos de ML a casos práticos, como sistemas de recomendação e aplicações voltadas a negócio.</p>
-                                <div class="skill-meter" aria-hidden="true">
-                                    <span style="--level: 76%;"></span>
-                                </div>
-                                <div class="skill-meta">
-                                    <strong>76%</strong>
-                                    <span data-i18n="skills.items.ml03.meta">Sistemas de recomendação e uso aplicado</span>
-                                </div>
-                                <div class="skill-tags">
-                                    <span data-i18n="skills.items.ml03.tags.1">Recommendation</span>
-                                    <span data-i18n="skills.items.ml03.tags.2">Applied ML</span>
-                                    <span data-i18n="skills.items.ml03.tags.3">Business</span>
-                                </div>
-                            </article>
-
-                            <article class="skill-item" data-category="dev" data-reveal="up">
-                                <div class="skill-topline">
-                                    <span class="skill-code">DEV-03</span>
-                                    <i class="bx bx-window-alt"></i>
-                                </div>
-                                <h3 data-i18n="skills.items.dev03.title">HTML, CSS e interface web</h3>
-                                <p data-i18n="skills.items.dev03.copy">Construção de interfaces web com atenção a apresentação, navegação, organização visual e experiência final.</p>
-                                <div class="skill-meter" aria-hidden="true">
-                                    <span style="--level: 83%;"></span>
-                                </div>
-                                <div class="skill-meta">
-                                    <strong>83%</strong>
-                                    <span data-i18n="skills.items.dev03.meta">Frontend, estrutura visual e entrega web</span>
-                                </div>
-                                <div class="skill-tags">
-                                    <span data-i18n="skills.items.dev03.tags.1">HTML</span>
-                                    <span data-i18n="skills.items.dev03.tags.2">CSS</span>
-                                    <span data-i18n="skills.items.dev03.tags.3">Web Apps</span>
-                                </div>
-                            </article>
-
-                            <article class="skill-item" data-category="data" data-reveal="up">
-                                <div class="skill-topline">
-                                    <span class="skill-code">DATA-02</span>
-                                    <i class="bx bx-bar-chart-alt-2"></i>
-                                </div>
-                                <h3 data-i18n="skills.items.data02.title">Power BI e visualização</h3>
-                                <p data-i18n="skills.items.data02.copy">Uso de Power BI, dashboards e visualização de dados para comunicar indicadores, apoiar leitura de cenário e tomada de decisão.</p>
-                                <div class="skill-meter" aria-hidden="true">
-                                    <span style="--level: 78%;"></span>
-                                </div>
-                                <div class="skill-meta">
-                                    <strong>78%</strong>
-                                    <span data-i18n="skills.items.data02.meta">Dashboards, visualização e leitura analítica</span>
-                                </div>
-                                <div class="skill-tags">
-                                    <span data-i18n="skills.items.data02.tags.1">Power BI</span>
-                                    <span data-i18n="skills.items.data02.tags.2">Dashboards</span>
-                                    <span data-i18n="skills.items.data02.tags.3">Data Viz</span>
-                                </div>
-                            </article>
-
-                            <article class="skill-item" data-category="infra" data-reveal="up">
-                                <div class="skill-topline">
-                                    <span class="skill-code">INF-01</span>
-                                    <i class="bx bx-terminal"></i>
-                                </div>
-                                <h3 data-i18n="skills.items.infra01.title">Git, GitHub e Linux</h3>
-                                <p data-i18n="skills.items.infra01.copy">Fluxo de versionamento, colaboração em repositórios e uso de ambiente Linux para desenvolvimento, automação e operação.</p>
-                                <div class="skill-meter" aria-hidden="true">
-                                    <span style="--level: 84%;"></span>
-                                </div>
-                                <div class="skill-meta">
-                                    <strong>84%</strong>
-                                    <span data-i18n="skills.items.infra01.meta">Versionamento, terminal e rotina de engenharia</span>
-                                </div>
-                                <div class="skill-tags">
-                                    <span data-i18n="skills.items.infra01.tags.1">Git</span>
-                                    <span data-i18n="skills.items.infra01.tags.2">GitHub</span>
-                                    <span data-i18n="skills.items.infra01.tags.3">Linux</span>
-                                </div>
-                            </article>
-
-                            <article class="skill-item" data-category="infra" data-reveal="up">
-                                <div class="skill-topline">
-                                    <span class="skill-code">INF-02</span>
-                                    <i class="bx bx-cloud"></i>
-                                </div>
-                                <h3 data-i18n="skills.items.infra02.title">Cloud, confiabilidade e produção</h3>
-                                <p data-i18n="skills.items.infra02.copy">Base em OCI, integração de IA com aplicações, sistemas seguros e confiáveis e leitura de produção para escalar com mais segurança.</p>
-                                <div class="skill-meter" aria-hidden="true">
-                                    <span style="--level: 76%;"></span>
-                                </div>
-                                <div class="skill-meta">
-                                    <strong>76%</strong>
-                                    <span data-i18n="skills.items.infra02.meta">Cloud, OCI, confiabilidade e entrega</span>
-                                </div>
-                                <div class="skill-tags">
-                                    <span data-i18n="skills.items.infra02.tags.1">OCI</span>
-                                    <span data-i18n="skills.items.infra02.tags.2">Cloud</span>
-                                    <span data-i18n="skills.items.infra02.tags.3">Production</span>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-
-                    <aside class="skills-aside" data-reveal="up">
-                        <span class="aside-label" data-i18n="skills.aside.label">Filtro ativo</span>
-                        <h3 id="active-filter-label">Todas as frentes</h3>
-                        <p id="active-filter-copy">
-                            Uma leitura objetiva das principais áreas que sustentam meu perfil: IA, ML, desenvolvimento, dados e infraestrutura.
-                        </p>
-
-                        <div class="aside-counter">
-                            <strong id="visible-skill-count">13</strong>
-                            <span data-i18n="skills.aside.counter">frentes em destaque</span>
-                        </div>
-
-                        <ul class="aside-list">
-                            <li data-i18n="skills.aside.list.1">IA e ML aplicados com base sólida de engenharia.</li>
-                            <li data-i18n="skills.aside.list.2">Desenvolvimento, análise de sistemas e produto.</li>
-                            <li data-i18n="skills.aside.list.3">Dados, visualização e operação em produção.</li>
-                        </ul>
-                    </aside>
+                <div class="knowledge-grid">
+                    <article class="knowledge-card" data-category="offensive" data-reveal="up">
+                        <i class="bx bx-radar"></i>
+                        <h3 data-i18n="knowledge.items.recon.title">Recon e enumeração</h3>
+                        <p data-i18n="knowledge.items.recon.copy">Leitura de superfície, portas, serviços, tecnologias e rotas de validação.</p>
+                        <div class="meter"><span style="--level: 74%;"></span></div>
+                        <strong>74%</strong>
+                    </article>
+                    <article class="knowledge-card" data-category="web" data-reveal="up">
+                        <i class="bx bx-code-curly"></i>
+                        <h3 data-i18n="knowledge.items.web.title">Pentest web e APIs</h3>
+                        <p data-i18n="knowledge.items.web.copy">OWASP Top 10, autenticação, autorização, inputs, APIs e análise de fluxo.</p>
+                        <div class="meter"><span style="--level: 70%;"></span></div>
+                        <strong>70%</strong>
+                    </article>
+                    <article class="knowledge-card" data-category="systems" data-reveal="up">
+                        <i class="bx bx-terminal"></i>
+                        <h3 data-i18n="knowledge.items.linux.title">Linux e terminal</h3>
+                        <p data-i18n="knowledge.items.linux.copy">Ambiente Linux, shell, permissões, processos, arquivos e rotina de laboratório.</p>
+                        <div class="meter"><span style="--level: 84%;"></span></div>
+                        <strong>84%</strong>
+                    </article>
+                    <article class="knowledge-card" data-category="systems" data-reveal="up">
+                        <i class="bx bx-network-chart"></i>
+                        <h3 data-i18n="knowledge.items.network.title">Redes e TCP/IP</h3>
+                        <p data-i18n="knowledge.items.network.copy">Fundamentos de rede, serviços, protocolos, diagnóstico e interpretação de tráfego.</p>
+                        <div class="meter"><span style="--level: 78%;"></span></div>
+                        <strong>78%</strong>
+                    </article>
+                    <article class="knowledge-card" data-category="offensive" data-reveal="up">
+                        <i class="bx bx-shield-quarter"></i>
+                        <h3 data-i18n="knowledge.items.privesc.title">Pós-exploração e privilege escalation</h3>
+                        <p data-i18n="knowledge.items.privesc.copy">Estudo de caminhos de elevação em Linux e Windows dentro de labs autorizados.</p>
+                        <div class="meter"><span style="--level: 62%;"></span></div>
+                        <strong>62%</strong>
+                    </article>
+                    <article class="knowledge-card" data-category="dev" data-reveal="up">
+                        <i class="bx bx-code-alt"></i>
+                        <h3 data-i18n="knowledge.items.dev.title">Python, JavaScript e Node.js</h3>
+                        <p data-i18n="knowledge.items.dev.copy">Automação, scripts, APIs, integrações, aplicações web e base de desenvolvimento.</p>
+                        <div class="meter"><span style="--level: 86%;"></span></div>
+                        <strong>86%</strong>
+                    </article>
+                    <article class="knowledge-card" data-category="dev" data-reveal="up">
+                        <i class="bx bxl-git"></i>
+                        <h3 data-i18n="knowledge.items.git.title">Git, GitHub e documentação</h3>
+                        <p data-i18n="knowledge.items.git.copy">Versionamento, organização de repositórios, histórico técnico e documentação clara.</p>
+                        <div class="meter"><span style="--level: 84%;"></span></div>
+                        <strong>84%</strong>
+                    </article>
+                    <article class="knowledge-card" data-category="data" data-reveal="up">
+                        <i class="bx bx-data"></i>
+                        <h3 data-i18n="knowledge.items.data.title">SQL, NoSQL e análise</h3>
+                        <p data-i18n="knowledge.items.data.copy">Bancos relacionais e não relacionais, leitura de dados e apoio à investigação técnica.</p>
+                        <div class="meter"><span style="--level: 80%;"></span></div>
+                        <strong>80%</strong>
+                    </article>
+                    <article class="knowledge-card" data-category="data" data-reveal="up">
+                        <i class="bx bx-bar-chart-alt-2"></i>
+                        <h3 data-i18n="knowledge.items.powerbi.title">Power BI e visualização</h3>
+                        <p data-i18n="knowledge.items.powerbi.copy">Dashboards, indicadores, leitura de cenário e comunicação visual de dados.</p>
+                        <div class="meter"><span style="--level: 76%;"></span></div>
+                        <strong>76%</strong>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section id="workflow" class="section workflow-section">
-            <div class="section-shell workflow-shell">
-                <div class="workflow-intro" data-reveal="up">
-                    <p class="eyebrow" data-i18n="workflow.eyebrow">Fluxo de construção</p>
-                    <h2 data-i18n="workflow.title">Do problema ao sistema em produção.</h2>
-                    <p data-i18n="workflow.copy">
-                        Estruturo soluções com uma lógica simples: problema, contexto, qualidade e entrega.
+        <section id="badges" class="section badges-section">
+            <div class="section-shell badges-shell">
+                <div class="section-heading compact" data-reveal="up">
+                    <p class="eyebrow" data-i18n="badges.eyebrow">Badges e evolução</p>
+                    <h2 data-i18n="badges.title">CPTS em andamento e trilha de prática contínua.</h2>
+                    <p data-i18n="badges.copy">
+                        Acompanhe minha evolução em labs, módulos e fundamentos que sustentam uma rotina séria de pentest.
                     </p>
                 </div>
 
-                <div class="workflow-steps">
-                    <article class="workflow-step" data-reveal="up">
-                        <span>01</span>
-                        <h3 data-i18n="workflow.steps.1.title">Definir o caso de uso</h3>
-                        <p data-i18n="workflow.steps.1.copy">Começo pelo problema, pelo usuário e pelo valor que a IA precisa destravar no produto.</p>
+                <article class="cpts-panel" data-reveal="up">
+                    <div class="cpts-badge">
+                        <img src="img/cpts-badge.svg" alt="Badge customizado CPTS em progresso" data-i18n-alt="badges.cpts.alt">
+                    </div>
+                    <div class="cpts-content">
+                        <span class="badge-kicker" data-i18n="badges.cpts.kicker">Hack The Box Academy</span>
+                        <h3 data-i18n="badges.cpts.title">CPTS · Certified Penetration Testing Specialist</h3>
+                        <p data-i18n="badges.cpts.copy">
+                            Certificação em progresso, com estudo voltado para metodologia de pentest,
+                            enumeração, exploração controlada, pivoting, Active Directory e relatório profissional.
+                        </p>
+                        <div class="cpts-meta">
+                            <span data-i18n="badges.cpts.studentLabel">Student ID</span>
+                            <strong>#2572917</strong>
+                        </div>
+                        <div class="cpts-progress">
+                            <div class="progress-head">
+                                <span data-i18n="badges.cpts.progressLabel">Progresso atual</span>
+                                <strong data-progress-text>25%</strong>
+                            </div>
+                            <div class="progress-track" aria-hidden="true">
+                                <span data-progress-bar style="--progress: 25%;"></span>
+                            </div>
+                            <p class="progress-note" data-i18n="badges.cpts.progressNote">
+                                Valor configurado manualmente. Pode ser integrado depois com um endpoint seguro usando Student ID e token da HTB Academy.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="badge-grid">
+                    <article class="badge-card" data-reveal="up">
+                        <i class="bx bx-cube-alt"></i>
+                        <h3 data-i18n="badges.items.academy.title">HTB Academy</h3>
+                        <p data-i18n="badges.items.academy.copy">Estudo guiado por módulos, checkpoints, labs e trilha de Penetration Tester.</p>
                     </article>
-                    <article class="workflow-step" data-reveal="up">
-                        <span>02</span>
-                        <h3 data-i18n="workflow.steps.2.title">Desenhar contexto e arquitetura</h3>
-                        <p data-i18n="workflow.steps.2.copy">Escolho modelo, contexto, tools, APIs e camada de dados conforme a complexidade do fluxo.</p>
+                    <article class="badge-card" data-reveal="up">
+                        <i class="bx bx-target-lock"></i>
+                        <h3 data-i18n="badges.items.labs.title">Labs autorizados</h3>
+                        <p data-i18n="badges.items.labs.copy">Prática em ambientes controlados para reforçar enumeração, validação e documentação.</p>
                     </article>
-                    <article class="workflow-step" data-reveal="up">
-                        <span>03</span>
-                        <h3 data-i18n="workflow.steps.3.title">Avaliar e ajustar</h3>
-                        <p data-i18n="workflow.steps.3.copy">Defino critérios, testo comportamento, registro erros e itero antes de chamar algo de pronto.</p>
-                    </article>
-                    <article class="workflow-step" data-reveal="up">
-                        <span>04</span>
-                        <h3 data-i18n="workflow.steps.4.title">Entregar e comunicar</h3>
-                        <p data-i18n="workflow.steps.4.copy">Transformo a solução em demo, API, interface ou fluxo claro de uso, com explicação objetiva do que foi feito.</p>
+                    <article class="badge-card" data-reveal="up">
+                        <i class="bx bx-book-content"></i>
+                        <h3 data-i18n="badges.items.ads.title">Graduação em ADS</h3>
+                        <p data-i18n="badges.items.ads.copy">Base de desenvolvimento, análise de sistemas, bancos de dados e engenharia de software.</p>
                     </article>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="section contact-section">
-            <div class="section-shell">
-                <div class="contact-panel" data-reveal="scale">
-                    <p class="eyebrow" data-i18n="contact.eyebrow">Disponível para projetos</p>
-                    <h2 data-i18n="contact.title">Aberto a projetos e oportunidades em Engenharia de IA.</h2>
+            <div class="section-shell contact-shell">
+                <div class="contact-copy" data-reveal="up">
+                    <p class="eyebrow" data-i18n="contact.eyebrow">Contato</p>
+                    <h2 data-i18n="contact.title">Aberto a oportunidades em cibersegurança ofensiva.</h2>
                     <p data-i18n="contact.copy">
-                        Atuo na construção de aplicações com GenAI, integrações, automações e experiências orientadas a produto.
+                        Busco evoluir em Red Team, pentest e segurança aplicada, conectando minha base de desenvolvimento
+                        com análise ofensiva, documentação e melhoria real de segurança.
                     </p>
-                    <div class="contact-highlights">
-                        <span data-i18n="contact.highlights.1">GenAI aplicada</span>
-                        <span data-i18n="contact.highlights.2">Integrações e APIs</span>
-                        <span data-i18n="contact.highlights.3">Produto e execução</span>
-                    </div>
-
-                    <div class="contact-actions">
-                        <a
-                            href="https://www.linkedin.com/in/gabriel-gomes-almeida-b85215340/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="btn btn-primary"
-                            data-i18n="contact.actions.linkedin"
-                        >
-                            Conversar no LinkedIn
-                        </a>
-                        <a
-                            href="https://github.com/GabrielGomesAL"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="btn btn-secondary"
-                            data-i18n="contact.actions.github"
-                        >
-                            Explorar GitHub
-                        </a>
-                    </div>
+                </div>
+                <div class="contact-actions" data-reveal="up">
+                    <a href="https://www.linkedin.com/in/gabriel-gomes-almeida-b85215340/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <i class="bx bxl-linkedin-square"></i>
+                        <span data-i18n="contact.actions.linkedin">LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/GabrielGomesAL" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <i class="bx bxl-github"></i>
+                        <span data-i18n="contact.actions.github">GitHub</span>
+                    </a>
+                    <a href="img/CURRICULO  2.0 PT.pdf" download="Gabriel_Gomes_Almeida_CV.pdf" class="btn btn-ghost">
+                        <i class="bx bx-download"></i>
+                        <span data-i18n="contact.actions.cv">Baixar CV</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -775,12 +411,14 @@
 
     <footer class="site-footer">
         <div class="section-shell footer-shell">
-            <p data-i18n="footer.copy">Gabriel Gomes Almeida · Engenharia de IA · LLM Apps · RAG · Evals</p>
-            <a href="#home" aria-label="Voltar para o topo" data-i18n="footer.backToTop" data-i18n-aria-label="footer.backToTopAria">Voltar ao topo</a>
+            <p data-i18n="footer.copy">Gabriel Gomes Almeida · Red Team · Pentest · CPTS em progresso</p>
+            <a href="#home" aria-label="Voltar ao topo" data-i18n="footer.backToTop" data-i18n-aria-label="footer.backToTopAria">Voltar ao topo</a>
         </div>
     </footer>
 
     <script src="js/i18n.js" defer></script>
     <script src="js/script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    <script src="js/cyber3d.js" defer></script>
 </body>
 </html>

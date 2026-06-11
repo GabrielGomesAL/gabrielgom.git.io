@@ -8,28 +8,27 @@ const revealItems = document.querySelectorAll("[data-reveal]");
 const sections = document.querySelectorAll("main section[id]");
 const scrollProgressBar = document.querySelector(".scroll-progress span");
 const languageButtons = Array.from(document.querySelectorAll(".language-option"));
-const skillFilters = document.querySelectorAll(".skill-filter");
-const skillItems = document.querySelectorAll(".skill-item");
-const activeFilterLabel = document.getElementById("active-filter-label");
-const activeFilterCopy = document.getElementById("active-filter-copy");
-const visibleSkillCount = document.getElementById("visible-skill-count");
-const systemStage = document.querySelector(".system-stage");
+const knowledgeFilters = Array.from(document.querySelectorAll(".knowledge-filter"));
+const knowledgeItems = Array.from(document.querySelectorAll(".knowledge-card"));
 const projectsGrid = document.getElementById("projects-grid");
 const projectsStatus = document.getElementById("projects-status");
 const pageTitle = document.querySelector("title");
 const pageDescription = document.querySelector('meta[name="description"]');
+const progressTexts = document.querySelectorAll("[data-progress-text]");
+const progressBars = document.querySelectorAll("[data-progress-bar]");
 const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 const finePointerQuery = window.matchMedia("(pointer: fine)");
 
 const DEFAULT_LANGUAGE = "pt";
 const LANGUAGE_STORAGE_KEY = "gabriel-portfolio-language";
+const DEFAULT_CPTS_PROGRESS = 25;
 const githubUsername = "GabrielGomesAL";
 const preferredRepoOrder = [
-    "reconhecimento-voz-transcribe",
-    "backend",
-    "quickdraw-teste",
     "network-configurator",
+    "backend",
     "gabrielgom.git.io",
+    "reconhecimento-voz-transcribe",
+    "quickdraw-teste",
     "faculdade-betoneira"
 ];
 
@@ -53,7 +52,8 @@ const i18n = window.PORTFOLIO_I18N || {
 
 let revealObserver = null;
 let currentLanguage = DEFAULT_LANGUAGE;
-let currentSkillCategory = "all";
+let currentKnowledgeCategory = "all";
+let currentCptsProgress = DEFAULT_CPTS_PROGRESS;
 let cachedRepos = [];
 let projectState = {
     mode: "idle",
@@ -121,6 +121,13 @@ function formatTemplate(template, values = {}) {
 
 function getLocale() {
     return localeByLanguage[currentLanguage] || localeByLanguage[DEFAULT_LANGUAGE];
+}
+
+function formatPercent(value) {
+    return new Intl.NumberFormat(getLocale(), {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 1
+    }).format(value);
 }
 
 function getInitialLanguage() {
@@ -193,14 +200,14 @@ function setupMenu() {
 
     navLinks.forEach((link) => {
         link.addEventListener("click", () => {
-            if (window.innerWidth <= 820) {
+            if (window.innerWidth <= 1020) {
                 toggleMenu(false);
             }
         });
     });
 
     window.addEventListener("resize", () => {
-        if (window.innerWidth > 820) {
+        if (window.innerWidth > 1020) {
             toggleMenu(false);
         }
     });
@@ -375,70 +382,66 @@ function updatePageMeta() {
     document.documentElement.lang = htmlLangByLanguage[currentLanguage] || htmlLangByLanguage[DEFAULT_LANGUAGE];
 }
 
-function updateSkillFilter(category) {
-    currentSkillCategory = category;
-    const details = getDynamicTranslation(`skills.filterDetails.${category}`)
-        || getDynamicTranslation("skills.filterDetails.all");
-    let visibleCount = 0;
+function updateKnowledgeFilter(category) {
+    currentKnowledgeCategory = category;
 
-    skillFilters.forEach((button) => {
+    knowledgeFilters.forEach((button) => {
         const isCurrent = (button.dataset.category || "all") === category;
         button.classList.toggle("is-active", isCurrent);
         button.setAttribute("aria-pressed", String(isCurrent));
     });
 
-    skillItems.forEach((item) => {
-        const shouldShow = category === "all" || item.dataset.category === category;
-        item.hidden = !shouldShow;
-        if (shouldShow) {
-            visibleCount += 1;
-        }
+    knowledgeItems.forEach((item) => {
+        item.hidden = !(category === "all" || item.dataset.category === category);
     });
-
-    if (activeFilterLabel && details) {
-        activeFilterLabel.textContent = details.label;
-    }
-
-    if (activeFilterCopy && details) {
-        activeFilterCopy.textContent = details.copy;
-    }
-
-    if (visibleSkillCount) {
-        visibleSkillCount.textContent = String(visibleCount);
-    }
 }
 
-function setupSkillFilters() {
-    skillFilters.forEach((button) => {
+function setupKnowledgeFilters() {
+    knowledgeFilters.forEach((button) => {
         button.addEventListener("click", () => {
-            updateSkillFilter(button.dataset.category || "all");
+            updateKnowledgeFilter(button.dataset.category || "all");
         });
     });
 
-    updateSkillFilter(currentSkillCategory);
+    updateKnowledgeFilter(currentKnowledgeCategory);
 }
 
-function setupHeroTilt() {
-    if (!systemStage || mediaQuery.matches || !finePointerQuery.matches) {
+function updateCptsProgress(progress = DEFAULT_CPTS_PROGRESS) {
+    const sanitized = Math.max(0, Math.min(Number(progress) || DEFAULT_CPTS_PROGRESS, 100));
+    currentCptsProgress = sanitized;
+    const formatted = `${formatPercent(sanitized)}%`;
+
+    progressTexts.forEach((item) => {
+        item.textContent = formatted;
+    });
+
+    progressBars.forEach((item) => {
+        item.style.setProperty("--progress", `${sanitized}%`);
+        item.style.setProperty("--level", `${sanitized}%`);
+    });
+}
+
+async function loadCptsProgress() {
+    updateCptsProgress(DEFAULT_CPTS_PROGRESS);
+
+    const endpoint = body.dataset.htbProgressEndpoint;
+    if (!endpoint) {
         return;
     }
 
-    const maxRotation = 10;
+    try {
+        const response = await fetch(endpoint, { cache: "no-store" });
+        if (!response.ok) {
+            throw new Error(`Progress endpoint returned ${response.status}`);
+        }
 
-    systemStage.addEventListener("pointermove", (event) => {
-        const bounds = systemStage.getBoundingClientRect();
-        const x = (event.clientX - bounds.left) / bounds.width;
-        const y = (event.clientY - bounds.top) / bounds.height;
-
-        const rotateY = (x - 0.5) * maxRotation;
-        const rotateX = (0.5 - y) * maxRotation;
-
-        systemStage.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
-
-    systemStage.addEventListener("pointerleave", () => {
-        systemStage.style.transform = "perspective(1200px) rotateX(0deg) rotateY(0deg)";
-    });
+        const data = await response.json();
+        if (typeof data.progress === "number") {
+            updateCptsProgress(data.progress);
+        }
+    } catch (error) {
+        updateCptsProgress(DEFAULT_CPTS_PROGRESS);
+    }
 }
 
 function getProjectStrings() {
@@ -487,7 +490,8 @@ function setLanguage(language) {
     updatePageMeta();
     applyStaticTranslations();
     updateLanguageButtons();
-    updateSkillFilter(currentSkillCategory);
+    updateKnowledgeFilter(currentKnowledgeCategory);
+    updateCptsProgress(currentCptsProgress);
 
     if (projectState.mode === "loading") {
         renderProjectPlaceholders();
@@ -631,7 +635,7 @@ function repoPriority(repo) {
         score += 40;
     }
 
-    if (/(ai|voz|voice|transcribe|llm|agent|chat|backend|api|portfolio|quickdraw)/.test(normalized)) {
+    if (/(security|cyber|network|config|backend|api|linux|automation|portfolio|quickdraw|voice|transcribe)/.test(normalized)) {
         score += 20;
     }
 
@@ -733,9 +737,9 @@ document.addEventListener("DOMContentLoaded", () => {
     setupReveal();
     setupSectionTracking();
     setupLanguageSwitcher();
-    setupSkillFilters();
-    setupHeroTilt();
+    setupKnowledgeFilters();
     setLanguage(currentLanguage);
+    loadCptsProgress();
     loadProjects();
 });
 
