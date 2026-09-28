@@ -733,9 +733,6 @@ h3 {
     min-height: 280px;
     padding: 1rem;
     place-items: center;
-    border: 1px solid rgba(156, 255, 46, 0.22);
-    border-radius: 18px;
-    background: #edf0f7;
 }
 
 .cpts-badge img {
