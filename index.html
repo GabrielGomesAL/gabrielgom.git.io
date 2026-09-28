@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
         name="description"
-        content="Portfólio de Gabriel Gomes Almeida focado em cibersegurança ofensiva, Red Team, pentest, Hack The Box CPTS e desenvolvimento seguro."
+        content="Gabriel Gomes Almeida, certificado CPTS pela Hack The Box. Segurança ofensiva, pentest, desenvolvimento e automação. Conheça meus projetos e minha trajetória."
     >
-    <title>Gabriel Gomes Almeida | Red Team & Pentest</title>
+    <title>Gabriel Gomes Almeida | CPTS · Segurança Ofensiva</title>
+    <meta name="theme-color" content="#0c1017">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gabriel Gomes Almeida | CPTS · Segurança Ofensiva">
+    <meta property="og:description" content="Certificado CPTS pela Hack The Box. Projetos, experiência e competências em segurança ofensiva, desenvolvimento e automação.">
     <link rel="icon" type="image/svg+xml" href="img/favicon-cyber.svg">
     <link rel="shortcut icon" href="img/favicon-cyber.svg">
     <link rel="apple-touch-icon" href="img/image.png">
@@ -20,7 +24,8 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body data-htb-progress-endpoint="">
+<body>
+    <a class="skip-link" href="#main" data-i18n="a11y.skip">Pular para o conteúdo</a>
     <div class="noise-layer" aria-hidden="true"></div>
     <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
@@ -46,11 +51,12 @@
 
             <nav id="site-nav" class="site-nav" aria-label="Navegação principal" data-i18n-aria-label="header.navAria">
                 <a href="#home" class="is-active" data-i18n="nav.home">Início</a>
+                <a href="#badges" data-i18n="nav.badges">Certificações</a>
+                <a href="#research" data-i18n="nav.research">CVEs</a>
                 <a href="#profile" data-i18n="nav.profile">Perfil</a>
                 <a href="#experience" data-i18n="nav.experience">Experiência</a>
                 <a href="#projects" data-i18n="nav.projects">Projetos</a>
                 <a href="#knowledge" data-i18n="nav.knowledge">Conhecimento</a>
-                <a href="#badges" data-i18n="nav.badges">Badges</a>
                 <a href="#contact" data-i18n="nav.contact">Contato</a>
             </nav>
 
@@ -62,37 +68,34 @@
         </div>
     </header>
 
-    <main>
+    <main id="main" tabindex="-1">
         <section id="home" class="hero section">
-            <canvas id="cyber3d" class="cyber-scene" aria-hidden="true"></canvas>
+            <div class="hero-grid" aria-hidden="true"></div>
             <div class="section-shell hero-shell">
                 <div class="hero-copy" data-reveal="up">
-                    <p class="eyebrow" data-i18n="hero.eyebrow">Red Team · Pentest · Segurança Ofensiva</p>
-                    <h1 data-i18n-html="hero.titleHtml">Gabriel Gomes Almeida</h1>
-                    <p class="hero-lead" data-i18n="hero.lead">
-                        Portfólio focado em cibersegurança ofensiva, com estudo prático em Red Team, pentest,
-                        enumeração, exploração controlada, documentação técnica e desenvolvimento seguro.
-                    </p>
+                    <p class="eyebrow" data-i18n="hero.eyebrow">Pesquisador de Segurança · Pentester · CPTS</p>
+                    <h1 data-i18n-html="hero.titleHtml">Gabriel Gomes<span class="name-accent">Almeida.</span></h1>
+                    <p class="hero-lead" data-i18n="hero.lead">Pesquisador de segurança com duas CVEs publicadas e certificação CPTS pela Hack The Box. Uno experiência em desenvolvimento e automação à análise de vulnerabilidades em aplicações reais.</p>
 
                     <div class="hero-actions">
                         <a href="#badges" class="btn btn-primary">
-                            <i class="bx bx-badge-check"></i>
-                            <span data-i18n="hero.actions.badges">Ver progresso CPTS</span>
+                            <i class="bx bx-badge-check" aria-hidden="true"></i>
+                            <span data-i18n="hero.actions.badges">Conheça minha CPTS</span>
                         </a>
-                        <a href="#projects" class="btn btn-secondary">
-                            <i class="bx bxl-github"></i>
-                            <span data-i18n="hero.actions.projects">Ver projetos</span>
+                        <a href="#research" class="btn btn-secondary">
+                            <i class="bx bxl-github" aria-hidden="true"></i>
+                            <span data-i18n="hero.actions.projects">Ver minhas CVEs</span>
                         </a>
                     </div>
 
                     <div class="hero-status" aria-label="Resumo profissional" data-i18n-aria-label="hero.statusAria">
                         <div>
-                            <span data-i18n="hero.status.focus.label">Foco atual</span>
-                            <strong data-i18n="hero.status.focus.value">Red Team & Pentest</strong>
+                            <span data-i18n="hero.status.focus.label">Pesquisa publicada</span>
+                            <strong data-i18n="hero.status.focus.value">2 CVEs · Open source</strong>
                         </div>
                         <div>
                             <span data-i18n="hero.status.cert.label">HTB CPTS</span>
-                            <strong><span data-progress-text>25%</span> <span data-i18n="hero.status.cert.value">concluído</span></strong>
+                            <strong class="cert-status" data-i18n="hero.status.cert.value">Certificação concluída</strong>
                         </div>
                         <div>
                             <span data-i18n="hero.status.base.label">Base técnica</span>
@@ -107,7 +110,7 @@
                             src="img/hero-gabriel.png"
                             alt="Foto de Gabriel Gomes Almeida"
                             data-i18n-alt="hero.photoAlt"
-                            loading="eager"
+                            width="675" height="880" fetchpriority="high" loading="eager"
                             decoding="async"
                         >
                         <div class="portrait-overlay" aria-hidden="true"></div>
@@ -131,15 +134,83 @@
             </div>
         </section>
 
+        <section id="badges" class="section badges-section">
+            <div class="section-shell badges-shell">
+                <div class="section-heading compact" data-reveal="up">
+                    <p class="eyebrow" data-i18n="badges.eyebrow">Certificações e formação</p>
+                    <h2 data-i18n="badges.title">CPTS conquistada. Prática contínua.</h2>
+                    <p data-i18n="badges.copy">Uma conquista que conecta minha experiência em desenvolvimento à atuação em segurança ofensiva.</p>
+                </div>
+
+                <article class="cpts-panel" data-reveal="up">
+                    <div class="cpts-badge">
+                        <img src="img/cpts-certified.png" width="512" height="512" loading="lazy" decoding="async" alt="Selo CPTS — Hack The Box Certified Penetration Testing Specialist" data-i18n-alt="badges.cpts.alt">
+                    </div>
+                    <div class="cpts-content">
+                        <span class="badge-kicker" data-i18n="badges.cpts.kicker">Hack The Box</span>
+                        <h3 data-i18n="badges.cpts.title">Certified Penetration Testing Specialist</h3>
+                        <p data-i18n="badges.cpts.copy">Certificação CPTS concluída, com foco em metodologia de pentest, enumeração, segurança web, Active Directory, pivoting e elaboração de relatórios técnicos.</p>
+                        <div class="certification-status"><i class="bx bx-check-shield" aria-hidden="true"></i><span data-i18n="badges.cpts.completed">Certificação concluída</span></div>
+                        <div class="tag-row certification-topics"><span>Web Security</span><span>Active Directory</span><span>Penetration Testing</span></div>
+                    </div>
+                </article>
+
+                <div class="badge-grid">
+                    <article class="badge-card" data-reveal="up">
+                        <i class="bx bx-cube-alt" aria-hidden="true"></i>
+                        <h3 data-i18n="badges.items.academy.title">OCI AI Foundations Associate</h3>
+                        <p data-i18n="badges.items.academy.copy">Oracle · 2025. Certificação em fundamentos de inteligência artificial.</p>
+                    </article>
+                    <article class="badge-card" data-reveal="up">
+                        <i class="bx bx-target-lock" aria-hidden="true"></i>
+                        <h3 data-i18n="badges.items.labs.title">Labs autorizados</h3>
+                        <p data-i18n="badges.items.labs.copy">Prática em ambientes controlados para reforçar enumeração, validação e documentação.</p>
+                    </article>
+                    <article class="badge-card" data-reveal="up">
+                        <i class="bx bx-book-content" aria-hidden="true"></i>
+                        <h3 data-i18n="badges.items.ads.title">Análise e Desenvolvimento de Sistemas</h3>
+                        <p data-i18n="badges.items.ads.copy">Centro Universitário IESB · Brasília. Formação em sistemas, redes, bancos de dados, engenharia de software e automação.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="section research-section">
+            <div class="section-shell">
+                <div class="section-heading" data-reveal="up">
+                    <p class="eyebrow" data-i18n="research.eyebrow">Pesquisa de vulnerabilidades</p>
+                    <h2 data-i18n="research.title">Descobertas reais. Reconhecimento público.</h2>
+                    <p data-i18n="research.copy">Duas CVEs publicadas em projetos open source de IA, com crédito como pesquisador nos avisos oficiais. Pesquisa voltada a autenticação, autorização e lógica de negócio.</p>
+                </div>
+                <div class="research-grid">
+                    <article class="research-card" data-reveal="up">
+                        <div class="research-topline"><span class="cve-id">CVE-2026-72917</span><span class="severity severity-moderate" data-i18n="research.anything.severity">Moderada · CVSS 5.9</span></div>
+                        <p class="research-product">AnythingLLM</p>
+                        <h3 data-i18n="research.anything.title">Segurança na recuperação de contas</h3>
+                        <p data-i18n="research.anything.copy">Falha na validação de entrada enfraquecia o requisito de dois códigos distintos na recuperação de conta. A descoberta contribuiu para corrigir uma proteção importante do fluxo de autenticação.</p>
+                        <div class="tag-row"><span>CWE-180</span><span>CWE-287</span><span data-i18n="research.anything.tag">Autenticação</span></div>
+                        <div class="research-credit"><i class="bx bx-check-circle" aria-hidden="true"></i><span data-i18n="research.credit">Crédito público: GabrielGomesAL · Reporter</span></div>
+                        <a class="project-link" href="https://github.com/Mintplex-Labs/anything-llm/security/advisories/GHSA-vv8w-wg6r-hq56" target="_blank" rel="noopener noreferrer"><span data-i18n="research.advisory">Ler aviso oficial</span><i class="bx bx-link-external" aria-hidden="true"></i><span class="sr-only"> — CVE-2026-72917</span></a>
+                    </article>
+                    <article class="research-card" data-reveal="up">
+                        <div class="research-topline"><span class="cve-id">CVE-2026-70483</span><span class="severity severity-low" data-i18n="research.openwebui.severity">Baixa · CVSS 3.1</span></div>
+                        <p class="research-product">Open WebUI</p>
+                        <h3 data-i18n="research.openwebui.title">Isolamento entre usuários</h3>
+                        <p data-i18n="research.openwebui.copy">Ausência de uma verificação de autorização permitia interromper a geração ativa de respostas de outro usuário. O relato contribuiu para reforçar o controle de acesso em um ambiente multiusuário.</p>
+                        <div class="tag-row"><span>CWE-862</span><span data-i18n="research.openwebui.tag">Autorização</span><span>Access Control</span></div>
+                        <div class="research-credit"><i class="bx bx-check-circle" aria-hidden="true"></i><span data-i18n="research.credit">Crédito público: GabrielGomesAL · Reporter</span></div>
+                        <a class="project-link" href="https://github.com/open-webui/open-webui/security/advisories/GHSA-3vf6-64vr-3g56" target="_blank" rel="noopener noreferrer"><span data-i18n="research.advisory">Ler aviso oficial</span><i class="bx bx-link-external" aria-hidden="true"></i><span class="sr-only"> — CVE-2026-70483</span></a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <section id="profile" class="section profile-section">
             <div class="section-shell">
                 <div class="section-heading" data-reveal="up">
-                    <p class="eyebrow" data-i18n="profile.eyebrow">Perfil ofensivo</p>
-                    <h2 data-i18n="profile.title">Pentest com método, evidência e comunicação clara.</h2>
-                    <p data-i18n="profile.copy">
-                        Atuo com mentalidade de análise ofensiva ética: entender superfície de ataque,
-                        validar riscos em ambientes autorizados e transformar achados em recomendações úteis.
-                    </p>
+                    <p class="eyebrow" data-i18n="profile.eyebrow">Como eu trabalho</p>
+                    <h2 data-i18n="profile.title">Entendo o código. Investigo o risco. Comunico a solução.</h2>
+                    <p data-i18n="profile.copy">Minha trajetória conecta desenvolvimento de sistemas, automação e pesquisa de vulnerabilidades. Com experiência no TJDFT e na RP Prospecção, levo a visão de quem constrói software para a análise de autenticação, autorização e segurança de aplicações.</p>
                 </div>
 
                 <div class="profile-grid">
@@ -182,14 +253,11 @@
                     <article class="timeline-item" data-reveal="up">
                         <div class="timeline-meta">
                             <span data-i18n="experience.tjdft.org">TJDFT</span>
-                            <strong data-i18n="experience.tjdft.period">out 2025 · atual</strong>
+                            <strong data-i18n="experience.tjdft.period">jan 2025 · jun 2026</strong>
                         </div>
                         <div class="timeline-content">
                             <h3 data-i18n="experience.tjdft.role">Desenvolvedor · Estágio</h3>
-                            <p data-i18n="experience.tjdft.copy">
-                                Apoio no desenvolvimento e manutenção de sistemas internos, automações,
-                                integração de plataformas, suporte técnico e melhoria de portais e dashboards institucionais.
-                            </p>
+                            <p data-i18n="experience.tjdft.copy">Desenvolvimento e manutenção de sistemas internos, portais e dashboards institucionais. Integração de plataformas, suporte à infraestrutura e automação de rotinas com Python, PowerShell, Bash e n8n.</p>
                             <div class="tag-row">
                                 <span data-i18n="experience.tjdft.tags.1">Sistemas internos</span>
                                 <span data-i18n="experience.tjdft.tags.2">Automação</span>
@@ -202,14 +270,11 @@
                     <article class="timeline-item" data-reveal="up">
                         <div class="timeline-meta">
                             <span data-i18n="experience.rp.org">RP Prospecção</span>
-                            <strong data-i18n="experience.rp.period">jan 2023 · nov 2024</strong>
+                            <strong data-i18n="experience.rp.period">jan 2024 · jan 2025</strong>
                         </div>
                         <div class="timeline-content">
-                            <h3 data-i18n="experience.rp.role">Desenvolvedor · Meio período</h3>
-                            <p data-i18n="experience.rp.copy">
-                                Desenvolvimento, manutenção e otimização de sistemas, levantamento de requisitos,
-                                integrações entre plataformas, testes, validações, documentação e treinamento de equipes.
-                            </p>
+                            <h3 data-i18n="experience.rp.role">Desenvolvedor</h3>
+                            <p data-i18n="experience.rp.copy">Desenvolvimento de automações com n8n, integração de sistemas, APIs e bancos de dados. Suporte técnico, diagnóstico de problemas e melhoria de processos internos.</p>
                             <div class="tag-row">
                                 <span data-i18n="experience.rp.tags.1">Full stack</span>
                                 <span data-i18n="experience.rp.tags.2">Integrações</span>
@@ -226,13 +291,12 @@
             <div class="section-shell">
                 <div class="section-heading compact" data-reveal="up">
                     <p class="eyebrow" data-i18n="projects.eyebrow">Projetos</p>
-                    <h2 data-i18n="projects.title">Repositórios públicos com leitura técnica e foco em segurança.</h2>
-                    <p data-i18n="projects.copy">
-                        Projetos do GitHub organizados para mostrar raciocínio, automação, desenvolvimento e base para segurança ofensiva.
-                    </p>
+                    <h2 data-i18n="projects.title">Código, prática e resolução de problemas.</h2>
+                    <p data-i18n="projects.copy">Uma seleção de projetos em desenvolvimento, redes e automação. Explore o código e a documentação de cada repositório.</p>
                 </div>
 
                 <p id="projects-status" class="projects-status" data-i18n="projects.status.loading">Carregando repositórios públicos...</p>
+                <noscript><p>Conheça meus projetos no <a href="https://github.com/GabrielGomesAL">GitHub</a>.</p></noscript>
                 <div id="projects-grid" class="projects-grid" aria-live="polite" aria-busy="true"></div>
             </div>
         </section>
@@ -240,8 +304,8 @@
         <section id="knowledge" class="section knowledge-section">
             <div class="section-shell">
                 <div class="section-heading compact" data-reveal="up">
-                    <p class="eyebrow" data-i18n="knowledge.eyebrow">Conhecimento</p>
-                    <h2 data-i18n="knowledge.title">Base técnica para Red Team e pentest.</h2>
+                    <p class="eyebrow" data-i18n="knowledge.eyebrow">Competências</p>
+                    <h2 data-i18n="knowledge.title">Da aplicação à infraestrutura.</h2>
                 </div>
 
                 <div class="knowledge-toolbar" data-reveal="up" aria-label="Filtrar conhecimentos" data-i18n-aria-label="knowledge.toolbarAria">
@@ -255,127 +319,49 @@
 
                 <div class="knowledge-grid">
                     <article class="knowledge-card" data-category="offensive" data-reveal="up">
-                        <i class="bx bx-radar"></i>
+                        <i class="bx bx-radar" aria-hidden="true"></i>
                         <h3 data-i18n="knowledge.items.recon.title">Recon e enumeração</h3>
                         <p data-i18n="knowledge.items.recon.copy">Leitura de superfície, portas, serviços, tecnologias e rotas de validação.</p>
-                        <div class="meter"><span style="--level: 74%;"></span></div>
-                        <strong>74%</strong>
                     </article>
                     <article class="knowledge-card" data-category="web" data-reveal="up">
-                        <i class="bx bx-code-curly"></i>
+                        <i class="bx bx-code-curly" aria-hidden="true"></i>
                         <h3 data-i18n="knowledge.items.web.title">Pentest web e APIs</h3>
-                        <p data-i18n="knowledge.items.web.copy">OWASP Top 10, autenticação, autorização, inputs, APIs e análise de fluxo.</p>
-                        <div class="meter"><span style="--level: 70%;"></span></div>
-                        <strong>70%</strong>
+                        <p data-i18n="knowledge.items.web.copy">Burp Suite, OWASP, autenticação, autorização e análise de vulnerabilidades em aplicações web e APIs.</p>
                     </article>
                     <article class="knowledge-card" data-category="systems" data-reveal="up">
-                        <i class="bx bx-terminal"></i>
+                        <i class="bx bx-terminal" aria-hidden="true"></i>
                         <h3 data-i18n="knowledge.items.linux.title">Linux e terminal</h3>
                         <p data-i18n="knowledge.items.linux.copy">Ambiente Linux, shell, permissões, processos, arquivos e rotina de laboratório.</p>
-                        <div class="meter"><span style="--level: 84%;"></span></div>
-                        <strong>84%</strong>
                     </article>
                     <article class="knowledge-card" data-category="systems" data-reveal="up">
-                        <i class="bx bx-network-chart"></i>
+                        <i class="bx bx-network-chart" aria-hidden="true"></i>
                         <h3 data-i18n="knowledge.items.network.title">Redes e TCP/IP</h3>
                         <p data-i18n="knowledge.items.network.copy">Fundamentos de rede, serviços, protocolos, diagnóstico e interpretação de tráfego.</p>
-                        <div class="meter"><span style="--level: 78%;"></span></div>
-                        <strong>78%</strong>
                     </article>
                     <article class="knowledge-card" data-category="offensive" data-reveal="up">
-                        <i class="bx bx-shield-quarter"></i>
-                        <h3 data-i18n="knowledge.items.privesc.title">Pós-exploração e privilege escalation</h3>
-                        <p data-i18n="knowledge.items.privesc.copy">Estudo de caminhos de elevação em Linux e Windows dentro de labs autorizados.</p>
-                        <div class="meter"><span style="--level: 62%;"></span></div>
-                        <strong>62%</strong>
+                        <i class="bx bx-shield-quarter" aria-hidden="true"></i>
+                        <h3 data-i18n="knowledge.items.privesc.title">Active Directory e ambientes Windows</h3>
+                        <p data-i18n="knowledge.items.privesc.copy">Prática em laboratórios com Active Directory, BloodHound e Impacket. Análise de permissões e caminhos de elevação.</p>
                     </article>
                     <article class="knowledge-card" data-category="dev" data-reveal="up">
-                        <i class="bx bx-code-alt"></i>
-                        <h3 data-i18n="knowledge.items.dev.title">Python, JavaScript e Node.js</h3>
-                        <p data-i18n="knowledge.items.dev.copy">Automação, scripts, APIs, integrações, aplicações web e base de desenvolvimento.</p>
-                        <div class="meter"><span style="--level: 86%;"></span></div>
-                        <strong>86%</strong>
+                        <i class="bx bx-code-alt" aria-hidden="true"></i>
+                        <h3 data-i18n="knowledge.items.dev.title">Python, PowerShell e Bash</h3>
+                        <p data-i18n="knowledge.items.dev.copy">Scripts, automação de rotinas, integrações com APIs e fluxos com n8n.</p>
                     </article>
                     <article class="knowledge-card" data-category="dev" data-reveal="up">
-                        <i class="bx bxl-git"></i>
+                        <i class="bx bxl-git" aria-hidden="true"></i>
                         <h3 data-i18n="knowledge.items.git.title">Git, GitHub e documentação</h3>
                         <p data-i18n="knowledge.items.git.copy">Versionamento, organização de repositórios, histórico técnico e documentação clara.</p>
-                        <div class="meter"><span style="--level: 84%;"></span></div>
-                        <strong>84%</strong>
                     </article>
                     <article class="knowledge-card" data-category="data" data-reveal="up">
-                        <i class="bx bx-data"></i>
+                        <i class="bx bx-data" aria-hidden="true"></i>
                         <h3 data-i18n="knowledge.items.data.title">SQL, NoSQL e análise</h3>
                         <p data-i18n="knowledge.items.data.copy">Bancos relacionais e não relacionais, leitura de dados e apoio à investigação técnica.</p>
-                        <div class="meter"><span style="--level: 80%;"></span></div>
-                        <strong>80%</strong>
                     </article>
                     <article class="knowledge-card" data-category="data" data-reveal="up">
-                        <i class="bx bx-bar-chart-alt-2"></i>
+                        <i class="bx bx-bar-chart-alt-2" aria-hidden="true"></i>
                         <h3 data-i18n="knowledge.items.powerbi.title">Power BI e visualização</h3>
                         <p data-i18n="knowledge.items.powerbi.copy">Dashboards, indicadores, leitura de cenário e comunicação visual de dados.</p>
-                        <div class="meter"><span style="--level: 76%;"></span></div>
-                        <strong>76%</strong>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="badges" class="section badges-section">
-            <div class="section-shell badges-shell">
-                <div class="section-heading compact" data-reveal="up">
-                    <p class="eyebrow" data-i18n="badges.eyebrow">Badges e evolução</p>
-                    <h2 data-i18n="badges.title">CPTS em andamento e trilha de prática contínua.</h2>
-                    <p data-i18n="badges.copy">
-                        Acompanhe minha evolução em labs, módulos e fundamentos que sustentam uma rotina séria de pentest.
-                    </p>
-                </div>
-
-                <article class="cpts-panel" data-reveal="up">
-                    <div class="cpts-badge">
-                        <img src="img/cpts-badge.svg" alt="Badge customizado CPTS em progresso" data-i18n-alt="badges.cpts.alt">
-                    </div>
-                    <div class="cpts-content">
-                        <span class="badge-kicker" data-i18n="badges.cpts.kicker">Hack The Box Academy</span>
-                        <h3 data-i18n="badges.cpts.title">CPTS · Certified Penetration Testing Specialist</h3>
-                        <p data-i18n="badges.cpts.copy">
-                            Certificação em progresso, com estudo voltado para metodologia de pentest,
-                            enumeração, exploração controlada, pivoting, Active Directory e relatório profissional.
-                        </p>
-                        <div class="cpts-meta">
-                            <span data-i18n="badges.cpts.studentLabel">Student ID</span>
-                            <strong>#2572917</strong>
-                        </div>
-                        <div class="cpts-progress">
-                            <div class="progress-head">
-                                <span data-i18n="badges.cpts.progressLabel">Progresso atual</span>
-                                <strong data-progress-text>25%</strong>
-                            </div>
-                            <div class="progress-track" aria-hidden="true">
-                                <span data-progress-bar style="--progress: 25%;"></span>
-                            </div>
-                            <p class="progress-note" data-i18n="badges.cpts.progressNote">
-                                Valor configurado manualmente. Pode ser integrado depois com um endpoint seguro usando Student ID e token da HTB Academy.
-                            </p>
-                        </div>
-                    </div>
-                </article>
-
-                <div class="badge-grid">
-                    <article class="badge-card" data-reveal="up">
-                        <i class="bx bx-cube-alt"></i>
-                        <h3 data-i18n="badges.items.academy.title">HTB Academy</h3>
-                        <p data-i18n="badges.items.academy.copy">Estudo guiado por módulos, checkpoints, labs e trilha de Penetration Tester.</p>
-                    </article>
-                    <article class="badge-card" data-reveal="up">
-                        <i class="bx bx-target-lock"></i>
-                        <h3 data-i18n="badges.items.labs.title">Labs autorizados</h3>
-                        <p data-i18n="badges.items.labs.copy">Prática em ambientes controlados para reforçar enumeração, validação e documentação.</p>
-                    </article>
-                    <article class="badge-card" data-reveal="up">
-                        <i class="bx bx-book-content"></i>
-                        <h3 data-i18n="badges.items.ads.title">Graduação em ADS</h3>
-                        <p data-i18n="badges.items.ads.copy">Base de desenvolvimento, análise de sistemas, bancos de dados e engenharia de software.</p>
                     </article>
                 </div>
             </div>
@@ -386,23 +372,20 @@
                 <div class="contact-copy" data-reveal="up">
                     <p class="eyebrow" data-i18n="contact.eyebrow">Contato</p>
                     <h2 data-i18n="contact.title">Aberto a oportunidades em cibersegurança ofensiva.</h2>
-                    <p data-i18n="contact.copy">
-                        Busco evoluir em Red Team, pentest e segurança aplicada, conectando minha base de desenvolvimento
-                        com análise ofensiva, documentação e melhoria real de segurança.
-                    </p>
+                    <p data-i18n="contact.copy">Busco oportunidades em pentest e segurança de aplicações. Contribuo com pesquisa reconhecida em projetos open source, certificação CPTS e experiência em desenvolvimento e automação.</p>
                 </div>
                 <div class="contact-actions" data-reveal="up">
                     <a href="https://www.linkedin.com/in/gabriel-gomes-almeida-b85215340/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                        <i class="bx bxl-linkedin-square"></i>
+                        <i class="bx bxl-linkedin-square" aria-hidden="true"></i>
                         <span data-i18n="contact.actions.linkedin">LinkedIn</span>
                     </a>
                     <a href="https://github.com/GabrielGomesAL" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                        <i class="bx bxl-github"></i>
+                        <i class="bx bxl-github" aria-hidden="true"></i>
                         <span data-i18n="contact.actions.github">GitHub</span>
                     </a>
-                    <a href="img/CURRICULO  2.0 PT.pdf" download="Gabriel_Gomes_Almeida_CV.pdf" class="btn btn-ghost">
-                        <i class="bx bx-download"></i>
-                        <span data-i18n="contact.actions.cv">Baixar CV</span>
+                    <a href="img/Gabriel_Gomes_Almeida_Resume_EN.pdf" download="Gabriel_Gomes_Almeida_CV.pdf" class="btn btn-ghost">
+                        <i class="bx bx-download" aria-hidden="true"></i>
+                        <span data-i18n="contact.actions.cv">Currículo em inglês</span>
                     </a>
                 </div>
             </div>
@@ -411,14 +394,13 @@
 
     <footer class="site-footer">
         <div class="section-shell footer-shell">
-            <p data-i18n="footer.copy">Gabriel Gomes Almeida · Red Team · Pentest · CPTS em progresso</p>
+            <p data-i18n="footer.copy">Gabriel Gomes Almeida · Segurança ofensiva · CPTS</p>
             <a href="#home" aria-label="Voltar ao topo" data-i18n="footer.backToTop" data-i18n-aria-label="footer.backToTopAria">Voltar ao topo</a>
         </div>
     </footer>
 
     <script src="js/i18n.js" defer></script>
     <script src="js/script.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-    <script src="js/cyber3d.js" defer></script>
+
 </body>
 </html>

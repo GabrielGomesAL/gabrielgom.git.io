@@ -14,14 +14,10 @@ const projectsGrid = document.getElementById("projects-grid");
 const projectsStatus = document.getElementById("projects-status");
 const pageTitle = document.querySelector("title");
 const pageDescription = document.querySelector('meta[name="description"]');
-const progressTexts = document.querySelectorAll("[data-progress-text]");
-const progressBars = document.querySelectorAll("[data-progress-bar]");
 const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-const finePointerQuery = window.matchMedia("(pointer: fine)");
 
 const DEFAULT_LANGUAGE = "pt";
 const LANGUAGE_STORAGE_KEY = "gabriel-portfolio-language";
-const DEFAULT_CPTS_PROGRESS = 25;
 const githubUsername = "GabrielGomesAL";
 const preferredRepoOrder = [
     "network-configurator",
@@ -53,7 +49,6 @@ const i18n = window.PORTFOLIO_I18N || {
 let revealObserver = null;
 let currentLanguage = DEFAULT_LANGUAGE;
 let currentKnowledgeCategory = "all";
-let currentCptsProgress = DEFAULT_CPTS_PROGRESS;
 let cachedRepos = [];
 let projectState = {
     mode: "idle",
@@ -123,13 +118,6 @@ function getLocale() {
     return localeByLanguage[currentLanguage] || localeByLanguage[DEFAULT_LANGUAGE];
 }
 
-function formatPercent(value) {
-    return new Intl.NumberFormat(getLocale(), {
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 1
-    }).format(value);
-}
-
 function getInitialLanguage() {
     try {
         const stored = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
@@ -149,13 +137,6 @@ function persistLanguage(language) {
     } catch (error) {
         // Ignore storage errors.
     }
-}
-
-function setPointerGlow(event) {
-    const x = (event.clientX / window.innerWidth) * 100;
-    const y = (event.clientY / window.innerHeight) * 100;
-    root.style.setProperty("--pointer-x", `${x}%`);
-    root.style.setProperty("--pointer-y", `${y}%`);
 }
 
 function setHeaderState() {
@@ -198,6 +179,16 @@ function setupMenu() {
         toggleMenu();
     });
 
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && nav.classList.contains("is-open")) {
+            toggleMenu(false);
+            menuToggle.focus();
+        }
+    });
+    document.addEventListener("click", (event) => {
+        if (!header.contains(event.target)) toggleMenu(false);
+    });
+
     navLinks.forEach((link) => {
         link.addEventListener("click", () => {
             if (window.innerWidth <= 1020) {
@@ -219,6 +210,7 @@ function setupReveal() {
         return;
     }
 
+    root.classList.add("reveal-enabled");
     revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
             if (!entry.isIntersecting) {
@@ -229,7 +221,7 @@ function setupReveal() {
             observer.unobserve(entry.target);
         });
     }, {
-        threshold: 0.18,
+        threshold: 0.06,
         rootMargin: "0px 0px -40px 0px"
     });
 
@@ -406,44 +398,6 @@ function setupKnowledgeFilters() {
     updateKnowledgeFilter(currentKnowledgeCategory);
 }
 
-function updateCptsProgress(progress = DEFAULT_CPTS_PROGRESS) {
-    const sanitized = Math.max(0, Math.min(Number(progress) || DEFAULT_CPTS_PROGRESS, 100));
-    currentCptsProgress = sanitized;
-    const formatted = `${formatPercent(sanitized)}%`;
-
-    progressTexts.forEach((item) => {
-        item.textContent = formatted;
-    });
-
-    progressBars.forEach((item) => {
-        item.style.setProperty("--progress", `${sanitized}%`);
-        item.style.setProperty("--level", `${sanitized}%`);
-    });
-}
-
-async function loadCptsProgress() {
-    updateCptsProgress(DEFAULT_CPTS_PROGRESS);
-
-    const endpoint = body.dataset.htbProgressEndpoint;
-    if (!endpoint) {
-        return;
-    }
-
-    try {
-        const response = await fetch(endpoint, { cache: "no-store" });
-        if (!response.ok) {
-            throw new Error(`Progress endpoint returned ${response.status}`);
-        }
-
-        const data = await response.json();
-        if (typeof data.progress === "number") {
-            updateCptsProgress(data.progress);
-        }
-    } catch (error) {
-        updateCptsProgress(DEFAULT_CPTS_PROGRESS);
-    }
-}
-
 function getProjectStrings() {
     return getDynamicTranslation("projects.cards");
 }
@@ -491,7 +445,6 @@ function setLanguage(language) {
     applyStaticTranslations();
     updateLanguageButtons();
     updateKnowledgeFilter(currentKnowledgeCategory);
-    updateCptsProgress(currentCptsProgress);
 
     if (projectState.mode === "loading") {
         renderProjectPlaceholders();
@@ -556,13 +509,22 @@ function getRepoLanguageLabel(repo) {
     return highlight?.language || repo.language || "GitHub";
 }
 
+function safeProjectUrl(value) {
+    try {
+        const url = new URL(value);
+        return ["https:", "http:"].includes(url.protocol) ? url.href : "";
+    } catch {
+        return "";
+    }
+}
+
 function createProjectCard(repo) {
     const strings = getProjectStrings();
     const summary = escapeHtml(getRepoSummary(repo));
     const language = escapeHtml(getRepoLanguageLabel(repo));
     const updated = escapeHtml(formatRepoDate(repo.updated_at));
     const stars = Number(repo.stargazers_count || 0);
-    const homepage = repo.homepage && repo.homepage.trim();
+    const homepage = safeProjectUrl(repo.homepage);
     const roleProof = escapeHtml(getRepoRoleProof(repo));
 
     return `
@@ -570,7 +532,7 @@ function createProjectCard(repo) {
             <div class="project-topline">
                 <span class="project-pill">${language}</span>
                 <span class="project-pill">${roleProof}</span>
-                <span class="project-stat"><i class="bx bx-star"></i>${stars}</span>
+                <span class="project-stat"><i class="bx bx-star" aria-hidden="true"></i>${stars}</span>
             </div>
             <div>
                 <h3 class="project-name">${escapeHtml(repo.name)}</h3>
@@ -581,13 +543,13 @@ function createProjectCard(repo) {
                 <span>${escapeHtml(strings.publicGithub)}</span>
             </div>
             <div class="project-links">
-                <a class="project-link" href="${escapeHtml(repo.html_url)}" target="_blank" rel="noopener noreferrer">
-                    <i class="bx bx-link-external"></i>
+                <a class="project-link" href="${escapeHtml(safeProjectUrl(repo.html_url))}" target="_blank" rel="noopener noreferrer">
+                    <i class="bx bx-link-external" aria-hidden="true"></i>
                     ${escapeHtml(strings.viewRepo)}
                 </a>
                 ${homepage ? `
                     <a class="project-link" href="${escapeHtml(homepage)}" target="_blank" rel="noopener noreferrer">
-                        <i class="bx bx-globe"></i>
+                        <i class="bx bx-globe" aria-hidden="true"></i>
                         ${escapeHtml(strings.viewDeploy)}
                     </a>
                 ` : ""}
@@ -702,15 +664,20 @@ async function loadProjects() {
     updateProjectsStatus();
     renderProjectPlaceholders();
 
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 8000);
+
     try {
-        const response = await fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=20`);
+        const response = await fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=20`, { signal: controller.signal });
 
         if (!response.ok) {
             throw new Error(`GitHub API returned ${response.status}`);
         }
 
         const repos = await response.json();
+        if (!Array.isArray(repos)) throw new Error("Invalid repository response");
         cachedRepos = selectFeaturedRepos(repos);
+        if (!cachedRepos.length) throw new Error("No featured repositories available");
         projectState = {
             mode: "live",
             count: cachedRepos.length
@@ -725,6 +692,8 @@ async function loadProjects() {
         };
         renderProjects(cachedRepos);
         updateProjectsStatus();
+    } finally {
+        window.clearTimeout(timeout);
     }
 }
 
@@ -739,7 +708,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setupLanguageSwitcher();
     setupKnowledgeFilters();
     setLanguage(currentLanguage);
-    loadCptsProgress();
     loadProjects();
 });
 
@@ -750,12 +718,3 @@ window.addEventListener("scroll", () => {
 
 window.addEventListener("resize", updateScrollProgress);
 window.addEventListener("load", updateScrollProgress);
-
-if (finePointerQuery.matches) {
-    window.addEventListener("pointermove", setPointerGlow, { passive: true });
-}
-
-body.addEventListener("mouseleave", () => {
-    root.style.setProperty("--pointer-x", "50%");
-    root.style.setProperty("--pointer-y", "18%");
-});
