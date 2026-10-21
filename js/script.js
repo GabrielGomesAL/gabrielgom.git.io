@@ -16,8 +16,7 @@ const pageTitle = document.querySelector("title");
 const pageDescription = document.querySelector('meta[name="description"]');
 const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-const DEFAULT_LANGUAGE = "pt";
-const LANGUAGE_STORAGE_KEY = "gabriel-portfolio-language";
+const DEFAULT_LANGUAGE = "en";
 const githubUsername = "GabrielGomesAL";
 const preferredRepoOrder = [
     "reconhecimento-voz-transcribe",
@@ -113,27 +112,6 @@ function formatTemplate(template, values = {}) {
 
 function getLocale() {
     return localeByLanguage[currentLanguage] || localeByLanguage[DEFAULT_LANGUAGE];
-}
-
-function getInitialLanguage() {
-    try {
-        const stored = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
-        if (stored && (stored === "pt" || i18n.static[stored])) {
-            return stored;
-        }
-    } catch (error) {
-        // Ignore storage errors.
-    }
-
-    return DEFAULT_LANGUAGE;
-}
-
-function persistLanguage(language) {
-    try {
-        window.localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
-    } catch (error) {
-        // Ignore storage errors.
-    }
 }
 
 function setHeaderState() {
@@ -439,7 +417,6 @@ function setLanguage(language) {
     }
 
     currentLanguage = language;
-    persistLanguage(language);
     body.dataset.language = language;
     updatePageMeta();
     applyStaticTranslations();
@@ -497,7 +474,7 @@ function getRepoSummary(repo) {
         return highlight.description;
     }
 
-    if (repo.description && repo.description.trim() && currentLanguage === DEFAULT_LANGUAGE) {
+    if (repo.description && repo.description.trim() && currentLanguage === "pt") {
         return repo.description.trim();
     }
 
@@ -653,7 +630,7 @@ async function loadProjects() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    currentLanguage = getInitialLanguage();
+    currentLanguage = DEFAULT_LANGUAGE;
     setHeaderState();
     updateScrollProgress();
     setupMenu();
