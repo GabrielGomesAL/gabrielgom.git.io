@@ -20,11 +20,8 @@ const DEFAULT_LANGUAGE = "pt";
 const LANGUAGE_STORAGE_KEY = "gabriel-portfolio-language";
 const githubUsername = "GabrielGomesAL";
 const preferredRepoOrder = [
-    "network-configurator",
-    "backend",
-    "gabrielgom.git.io",
     "reconhecimento-voz-transcribe",
-    "quickdraw-teste",
+    "gabrielgom.git.io",
     "faculdade-betoneira"
 ];
 
@@ -371,6 +368,9 @@ function updatePageMeta() {
         pageDescription.setAttribute("content", meta.description);
     }
 
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", meta.title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", meta.description);
+
     document.documentElement.lang = htmlLangByLanguage[currentLanguage] || htmlLangByLanguage[DEFAULT_LANGUAGE];
 }
 
@@ -589,56 +589,11 @@ function renderProjectPlaceholders() {
     updateScrollProgress();
 }
 
-function repoPriority(repo) {
-    const normalized = `${repo.name} ${repo.description || ""}`.toLowerCase();
-    let score = 0;
-
-    if (preferredRepoOrder.includes(repo.name)) {
-        score += 40;
-    }
-
-    if (/(security|cyber|network|config|backend|api|linux|automation|portfolio|quickdraw|voice|transcribe)/.test(normalized)) {
-        score += 20;
-    }
-
-    if (repo.homepage) {
-        score += 6;
-    }
-
-    if (!repo.fork) {
-        score += 4;
-    }
-
-    return score;
-}
-
 function selectFeaturedRepos(repos) {
-    const unique = repos.filter((repo) => !repo.fork && repo.name !== "GabrielGomesAL");
-    const selected = [];
-
-    preferredRepoOrder.forEach((repoName) => {
-        const match = unique.find((repo) => repo.name === repoName);
-        if (match) {
-            selected.push(match);
-        }
-    });
-
-    unique
-        .sort((a, b) => {
-            const priorityDiff = repoPriority(b) - repoPriority(a);
-            if (priorityDiff !== 0) {
-                return priorityDiff;
-            }
-
-            return new Date(b.updated_at) - new Date(a.updated_at);
-        })
-        .forEach((repo) => {
-            if (!selected.some((item) => item.name === repo.name) && selected.length < 6) {
-                selected.push(repo);
-            }
-        });
-
-    return selected.slice(0, 6);
+    // Keep the showcase tied to repositories whose public implementation was reviewed.
+    return preferredRepoOrder
+        .map((name) => repos.find((repo) => repo.name === name && !repo.fork && repo.size > 0))
+        .filter(Boolean);
 }
 
 function renderProjects(repos) {
@@ -668,7 +623,7 @@ async function loadProjects() {
     const timeout = window.setTimeout(() => controller.abort(), 8000);
 
     try {
-        const response = await fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=20`, { signal: controller.signal });
+        const response = await fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=100`, { signal: controller.signal });
 
         if (!response.ok) {
             throw new Error(`GitHub API returned ${response.status}`);
